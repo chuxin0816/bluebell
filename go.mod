@@ -3,6 +3,7 @@ module github.com/chuxin0816/Scaffold
 go 1.21.1
 
 require (
+	github.com/bwmarrin/snowflake v0.3.0
 	github.com/cloudwego/hertz v0.6.8
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/go-redis/redis v6.15.9+incompatible

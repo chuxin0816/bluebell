@@ -10,7 +10,7 @@ import (
 
 var DB *gorm.DB
 
-func Init(conf *config.MysqlConfig) error {
+func Init(conf *config.MysqlConfig) (err error) {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True&loc=Local",
 		conf.User,
 		conf.Password,
@@ -18,7 +18,6 @@ func Init(conf *config.MysqlConfig) error {
 		conf.Port,
 		conf.DBName,
 	)
-	var err error
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
-	return err
+	return
 }

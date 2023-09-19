@@ -9,7 +9,10 @@ import (
 var Conf = new(Config)
 
 type Config struct {
+	Name         string `mapstructure:"name"`
 	Version      string `mapstructure:"version"`
+	StartTime    string `mapstructure:"start_time"`
+	MachineID    int64  `mapstructure:"machine_id"`
 	*HertzConfig `mapstructure:"hertz"`
 	*LogConfig   `mapstructure:"log"`
 	*MysqlConfig `mapstructure:"mysql"`
@@ -45,11 +48,11 @@ type RedisConfig struct {
 
 func Init() error {
 	//指定配置文件类型(专门用于解析远程配置文件）
-	// viper.SetConfigType("json")    
+	// viper.SetConfigType("json")
 
 	viper.SetConfigName("config")   //指定配置文件的文件名称(不需要扩展名)
 	viper.AddConfigPath("./config") //指定查找配置文件的路径(这里使用相对路径)
-	
+
 	err := viper.ReadInConfig()
 	if err != nil {
 		return err
