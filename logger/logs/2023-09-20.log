@@ -156,3 +156,6 @@
 {"level":"info","ts":1695220405.1371179,"msg":"HERTZ: Using network library=netpoll"}
 {"level":"info","ts":1695220405.137265,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
 {"level":"error","ts":1695220412.886782,"msg":"SignUp with invalid param, err:validating: expr_path=Username, cause=invalid"}
+{"level":"info","ts":1695226035.2068539,"msg":"HERTZ: Received signal: interrupt\n"}
+{"level":"info","ts":1695226035.207904,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
+{"level":"info","ts":1695226035.208232,"msg":"HERTZ: Execute OnShutdownHooks finish"}

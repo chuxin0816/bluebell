@@ -6,11 +6,22 @@ import (
 	"github.com/chuxin0816/Scaffold/pkg/snowflake"
 )
 
-func SignUp(p *models.ParamSignUp) {
+func SignUp(p *models.ParamSignUp) error {
 	// 查询用户是否存在
-	mysql.QueryByUserName(p.Username)
+	err := mysql.CheckUserExist(p.Username)
+	if err != nil {
+		return err
+	}
+
 	// 生成UID
-	snowflake.GenerateID()
+	userID := snowflake.GenerateID()
+	user := &models.User{
+		UserID:   userID,
+		Username: p.Username,
+		Password: p.Password,
+	}
+
 	// 保存用户信息
-	mysql.InsertUser()
+	err = mysql.InsertUser(user)
+	return err
 }

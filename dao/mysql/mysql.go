@@ -23,6 +23,6 @@ func Init(conf *config.MysqlConfig) (err error) {
 	if err != nil {
 		return
 	}
-	db.Table("user").AutoMigrate(&models.User{})
+	db.AutoMigrate(&models.User{})
 	return
 }
