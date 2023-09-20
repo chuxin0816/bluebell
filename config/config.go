@@ -67,7 +67,7 @@ func Init() error {
 	viper.WatchConfig()
 	viper.OnConfigChange(func(in fsnotify.Event) {
 		if err := viper.Unmarshal(Conf); err != nil {
-			hlog.Error("viper unmarshal failed, err:%v", err)
+			hlog.Error("viper unmarshal failed, err: ", err)
 		} else {
 			hlog.Notice("config file changed")
 		}

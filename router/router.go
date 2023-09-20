@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/chuxin0816/Scaffold/config"
+	"github.com/chuxin0816/Scaffold/controller"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/cloudwego/hertz/pkg/common/utils"
@@ -19,6 +20,7 @@ func Setup(conf *config.HertzConfig) *server.Hertz {
 	h.GET("/ping", func(c context.Context, ctx *app.RequestContext) {
 		ctx.JSON(consts.StatusOK, utils.H{"message": "pong"})
 	})
+	h.POST("/signup", controller.SignUpHandler)
 
 	return h
 }
