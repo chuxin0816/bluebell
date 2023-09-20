@@ -7,7 +7,6 @@ import (
 	"github.com/chuxin0816/Scaffold/dao/mysql"
 	"github.com/chuxin0816/Scaffold/dao/redis"
 	"github.com/chuxin0816/Scaffold/logger"
-	"github.com/chuxin0816/Scaffold/models"
 	"github.com/chuxin0816/Scaffold/pkg/snowflake"
 	"github.com/chuxin0816/Scaffold/router"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
@@ -29,13 +28,12 @@ func main() {
 		hlog.Error("mysql init failed, err:%v", err)
 		return
 	}
-	mysql.DB.Table("user").AutoMigrate(&models.User{})
 	// 初始化redis
 	if err := redis.Init(config.Conf.RedisConfig); err != nil {
 		hlog.Error("redis init failed, err:%v", err)
 		return
 	}
-	defer redis.RDB.Close()
+	defer redis.Close()
 	// 初始化雪花算法
 	if err := snowflake.Init(config.Conf.StartTime, config.Conf.MachineID); err != nil {
 		hlog.Error("snowflake init failed, err:%v", err)

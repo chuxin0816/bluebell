@@ -7,14 +7,18 @@ import (
 	"github.com/go-redis/redis"
 )
 
-var RDB *redis.Client
+var rdb *redis.Client
 
 func Init(conf *config.RedisConfig) error {
-	RDB = redis.NewClient(&redis.Options{
+	rdb = redis.NewClient(&redis.Options{
 		Addr:     fmt.Sprintf("%s:%d", conf.Host, conf.Port),
 		Password: conf.Password,
 		DB:       conf.DB,
 	})
-	_, err := RDB.Ping().Result()
+	_, err := rdb.Ping().Result()
 	return err
+}
+
+func Close() {
+	_ = rdb.Close()
 }
