@@ -85,3 +85,14 @@
 {"level":"info","ts":1695263030.5831628,"msg":"HERTZ: Received signal: interrupt\n"}
 {"level":"info","ts":1695263030.58379,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
 {"level":"info","ts":1695263030.5839849,"msg":"HERTZ: Execute OnShutdownHooks finish"}
+{"level":"debug","ts":1695268361.790775,"msg":"HERTZ: Method=GET    absolutePath=/ping                     --> handlerName=github.com/chuxin0816/Scaffold/router.SetUp.func1 (num=2 handlers)"}
+{"level":"debug","ts":1695268361.791368,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/Scaffold/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695268361.7913978,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/Scaffold/controller.LoginHandler (num=2 handlers)"}
+{"level":"info","ts":1695268361.79152,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695268361.791633,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"error","ts":1695268370.4914281,"msg":"SignUp with service error: 用户已存在"}
+{"level":"error","ts":1695268438.4785888,"msg":"SignUp with invalid param: validating: expr_path=Password, cause=invalid"}
+{"level":"error","ts":1695268456.311017,"msg":"Login with service error: 密码错误"}
+{"level":"info","ts":1695268493.740603,"msg":"HERTZ: Received signal: interrupt\n"}
+{"level":"info","ts":1695268493.740748,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
+{"level":"info","ts":1695268498.7418618,"msg":"HERTZ: Execute OnShutdownHooks finish"}

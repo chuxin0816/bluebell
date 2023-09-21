@@ -21,6 +21,7 @@ func SetUp(conf *config.HertzConfig) *server.Hertz {
 		ctx.JSON(consts.StatusOK, utils.H{"message": "pong"})
 	})
 	h.POST("/register", controller.RegisterHandler)
+	h.POST("/login", controller.LoginHandler)
 
 	return h
 }

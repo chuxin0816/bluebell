@@ -2,23 +2,17 @@ package mysql
 
 import (
 	"errors"
+	"fmt"
 
 	"github.com/chuxin0816/Scaffold/models"
 	"golang.org/x/crypto/bcrypt"
-	"gorm.io/gorm"
 )
 
 // CheckUserExist 检查指定用户名的用户是否存在
-func CheckUserExist(username string) (err error) {
+func CheckUserExist(username string) (exist bool) {
 	var user models.User
-	err = db.Where("username = ?", username).First(&user).Error
-	if user.ID > 0 {
-		return errors.New("用户已存在")
-	}
-	if err == gorm.ErrRecordNotFound {
-		err = nil
-	}
-	return
+	db.Where("username = ?", username).First(&user)
+	return user.ID != 0
 }
 
 // InsertUser 向数据库中插入一条新的用户记录
@@ -33,4 +27,16 @@ func InsertUser(user *models.User) error {
 	// 创建用户
 	err = db.Create(user).Error
 	return err
+}
+
+func Login(user *models.User) error {
+	password := user.Password
+	db.Where("username = ?", user.Username).First(&user)
+	if user.ID == 0 {
+		return errors.New("用户不存在")
+	}
+	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(password)); err != nil {
+		return errors.New(fmt.Sprint("用户:", user.Username, " 密码错误"))
+	}
+	return nil
 }
