@@ -82,3 +82,6 @@
 {"level":"error","ts":1695261456.6342049,"msg":"SignUp with service error: 用户已存在"}
 {"level":"error","ts":1695261491.013716,"msg":"SignUp with invalid param: validating: expr_path=Email, cause=invalid"}
 {"level":"error","ts":1695261521.166547,"msg":"SignUp with service error: 用户已存在"}
+{"level":"info","ts":1695263030.5831628,"msg":"HERTZ: Received signal: interrupt\n"}
+{"level":"info","ts":1695263030.58379,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
+{"level":"info","ts":1695263030.5839849,"msg":"HERTZ: Execute OnShutdownHooks finish"}
