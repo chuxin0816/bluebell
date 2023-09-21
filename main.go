@@ -18,7 +18,7 @@ func main() {
 		return
 	}
 	// 初始化日志
-	if err := logger.Init(config.Conf.LogConfig); err != nil {
+	if err := logger.Init(config.Conf.LogConfig, config.Conf.Mode); err != nil {
 		fmt.Printf("logger init failed, err:%v\n", err)
 		return
 	}
@@ -39,7 +39,7 @@ func main() {
 		return
 	}
 	// 注册路由
-	h := router.Setup(config.Conf.HertzConfig)
+	h := router.SetUp(config.Conf.HertzConfig)
 	// 启动服务
 	h.Spin()
 }

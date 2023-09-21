@@ -39,3 +39,46 @@
 {"level":"info","ts":1695229171.382821,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
 {"level":"error","ts":1695229174.897635,"msg":"SignUp with service error, err: 用户已存在"}
 {"level":"info","ts":1695229175.384074,"msg":"HERTZ: Execute OnShutdownHooks finish"}
+{"level":"debug","ts":1695260296.220466,"msg":"HERTZ: Method=GET    absolutePath=/ping                     --> handlerName=github.com/chuxin0816/Scaffold/router.Setup.func1 (num=2 handlers)"}
+{"level":"debug","ts":1695260296.220976,"msg":"HERTZ: Method=POST   absolutePath=/signup                   --> handlerName=github.com/chuxin0816/Scaffold/controller.SignUpHandler (num=2 handlers)"}
+{"level":"info","ts":1695260296.2211342,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695260296.221229,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"info","ts":1695260300.2503538,"msg":"HERTZ: Received signal: interrupt\n"}
+{"level":"info","ts":1695260300.250536,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
+{"level":"info","ts":1695260300.250813,"msg":"HERTZ: Execute OnShutdownHooks finish"}
+{"level":"debug","ts":1695260538.60036,"msg":"HERTZ: Method=GET    absolutePath=/ping                     --> handlerName=github.com/chuxin0816/Scaffold/router.Setup.func1 (num=2 handlers)"}
+{"level":"debug","ts":1695260538.6006699,"msg":"HERTZ: Method=POST   absolutePath=/signup                   --> handlerName=github.com/chuxin0816/Scaffold/controller.SignUpHandler (num=2 handlers)"}
+{"level":"info","ts":1695260538.600853,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695260538.600933,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"info","ts":1695260556.691486,"msg":"HERTZ: Received signal: interrupt\n"}
+{"level":"info","ts":1695260556.691624,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
+{"level":"info","ts":1695260556.69186,"msg":"HERTZ: Execute OnShutdownHooks finish"}
+{"level":"debug","ts":1695260620.2016299,"msg":"HERTZ: Method=GET    absolutePath=/ping                     --> handlerName=github.com/chuxin0816/Scaffold/router.Setup.func1 (num=2 handlers)"}
+{"level":"debug","ts":1695260620.2020202,"msg":"HERTZ: Method=POST   absolutePath=/signup                   --> handlerName=github.com/chuxin0816/Scaffold/controller.SignUpHandler (num=2 handlers)"}
+{"level":"info","ts":1695260620.202177,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695260620.202284,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"error","ts":1695260627.4424,"msg":"SignUp with invalid param: validating: expr_path=Email, cause=email format is incorrect"}
+{"level":"error","ts":1695260655.813845,"msg":"SignUp with invalid param: validating: expr_path=Email, cause=email format is incorrect"}
+{"level":"error","ts":1695260688.0852091,"msg":"SignUp with service error: 用户已存在"}
+{"level":"error","ts":1695260701.948962,"msg":"SignUp with service error: record not found"}
+{"level":"error","ts":1695260815.695765,"msg":"SignUp with service error: 用户已存在"}
+{"level":"info","ts":1695260968.90875,"msg":"HERTZ: Received signal: interrupt\n"}
+{"level":"info","ts":1695260968.909801,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
+{"level":"info","ts":1695260973.911273,"msg":"HERTZ: Execute OnShutdownHooks timeout: error=context deadline exceeded"}
+{"level":"debug","ts":1695260977.3148,"msg":"HERTZ: Method=GET    absolutePath=/ping                     --> handlerName=github.com/chuxin0816/Scaffold/router.Setup.func1 (num=2 handlers)"}
+{"level":"debug","ts":1695260977.315014,"msg":"HERTZ: Method=POST   absolutePath=/signup                   --> handlerName=github.com/chuxin0816/Scaffold/controller.SignUpHandler (num=2 handlers)"}
+{"level":"info","ts":1695260977.315124,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695260977.3152351,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"error","ts":1695260980.90643,"msg":"SignUp with service error: 用户已存在"}
+{"level":"error","ts":1695261406.147818,"msg":"SignUp with invalid param: invalid character '}' looking for beginning of object key string"}
+{"level":"error","ts":1695261421.3049102,"msg":"SignUp with invalid param: validating: expr_path=Email, cause=email format is incorrect"}
+{"level":"info","ts":1695261444.417351,"msg":"HERTZ: Received signal: interrupt\n"}
+{"level":"info","ts":1695261444.4174862,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
+{"level":"info","ts":1695261449.418279,"msg":"HERTZ: Execute OnShutdownHooks timeout: error=context deadline exceeded"}
+{"level":"debug","ts":1695261452.1865668,"msg":"HERTZ: Method=GET    absolutePath=/ping                     --> handlerName=github.com/chuxin0816/Scaffold/router.Setup.func1 (num=2 handlers)"}
+{"level":"debug","ts":1695261452.186754,"msg":"HERTZ: Method=POST   absolutePath=/signup                   --> handlerName=github.com/chuxin0816/Scaffold/controller.SignUpHandler (num=2 handlers)"}
+{"level":"info","ts":1695261452.1868749,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695261452.18698,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"error","ts":1695261456.6342049,"msg":"SignUp with service error: 用户已存在"}
+{"level":"error","ts":1695261491.013716,"msg":"SignUp with invalid param: validating: expr_path=Email, cause=invalid"}
+{"level":"error","ts":1695261521.166547,"msg":"SignUp with service error: 用户已存在"}

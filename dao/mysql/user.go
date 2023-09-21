@@ -5,14 +5,18 @@ import (
 
 	"github.com/chuxin0816/Scaffold/models"
 	"golang.org/x/crypto/bcrypt"
+	"gorm.io/gorm"
 )
 
 // CheckUserExist 检查指定用户名的用户是否存在
 func CheckUserExist(username string) (err error) {
 	var user models.User
 	err = db.Where("username = ?", username).First(&user).Error
-	if user.UserID > 0 {
+	if user.ID > 0 {
 		return errors.New("用户已存在")
+	}
+	if err == gorm.ErrRecordNotFound {
+		err = nil
 	}
 	return
 }

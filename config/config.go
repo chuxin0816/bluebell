@@ -11,6 +11,7 @@ var Conf = new(Config)
 type Config struct {
 	Name         string `mapstructure:"name"`
 	Version      string `mapstructure:"version"`
+	Mode         string `mapstructure:"mode"`
 	StartTime    string `mapstructure:"start_time"`
 	MachineID    int64  `mapstructure:"machine_id"`
 	*HertzConfig `mapstructure:"hertz"`

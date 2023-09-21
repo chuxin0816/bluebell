@@ -1,6 +1,7 @@
 {
   "name": "bluebell",
   "version": "v0.2.0",
+  "mode": "dev",
   "start_time": "2023-09-18",
   "machine_id": 1,
   "hertz": {

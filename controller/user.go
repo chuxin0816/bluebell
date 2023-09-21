@@ -11,7 +11,7 @@ import (
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 )
 
-func SignUpHandler(c context.Context, ctx *app.RequestContext) {
+func RegisterHandler(c context.Context, ctx *app.RequestContext) {
 	// 从请求中获取参数
 	p := new(models.ParamSignUp)
 	if err := ctx.BindAndValidate(p); err != nil {
@@ -21,7 +21,7 @@ func SignUpHandler(c context.Context, ctx *app.RequestContext) {
 	}
 
 	// 调用service层处理业务逻辑
-	if err := service.SignUp(p); err != nil {
+	if err := service.Register(p); err != nil {
 		hlog.Error("SignUp with service error: ", err)
 		ctx.JSON(consts.StatusOK, utils.H{"msg": "error"})
 		return

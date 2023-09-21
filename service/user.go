@@ -6,7 +6,7 @@ import (
 	"github.com/chuxin0816/Scaffold/pkg/snowflake"
 )
 
-func SignUp(p *models.ParamSignUp) error {
+func Register(p *models.ParamSignUp) error {
 	// 查询用户是否存在
 	err := mysql.CheckUserExist(p.Username)
 	if err != nil {

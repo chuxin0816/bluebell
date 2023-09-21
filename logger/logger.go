@@ -1,6 +1,7 @@
 package logger
 
 import (
+	"io"
 	"os"
 	"path"
 	"time"
@@ -11,7 +12,7 @@ import (
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 
-func Init(conf *config.LogConfig) error {
+func Init(conf *config.LogConfig, mode string) error {
 	// 可定制的输出目录。
 	var logFilePath string = conf.Path
 	if err := os.MkdirAll(logFilePath, 0o777); err != nil {
@@ -39,8 +40,12 @@ func Init(conf *config.LogConfig) error {
 		MaxAge:     conf.MaxAge,     // 一个文件最多可以保存 10 天。
 		Compress:   true,            // 用 gzip 压缩。
 	}
-
-	logger.SetOutput(lumberjackLogger)
+	// 开发模式，日志同时输出到控制台和文件
+	if mode == "dev" {
+		logger.SetOutput(io.MultiWriter(os.Stdout, lumberjackLogger))
+	} else {
+		logger.SetOutput(lumberjackLogger)
+	}
 	logger.SetLevel(hlog.LevelDebug)
 
 	hlog.SetLogger(logger)

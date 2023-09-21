@@ -12,7 +12,7 @@ import (
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 )
 
-func Setup(conf *config.HertzConfig) *server.Hertz {
+func SetUp(conf *config.HertzConfig) *server.Hertz {
 	h := server.Default(server.WithHostPorts(
 		fmt.Sprintf("%s:%d", conf.Host, conf.Port),
 	))
@@ -20,7 +20,7 @@ func Setup(conf *config.HertzConfig) *server.Hertz {
 	h.GET("/ping", func(c context.Context, ctx *app.RequestContext) {
 		ctx.JSON(consts.StatusOK, utils.H{"message": "pong"})
 	})
-	h.POST("/signup", controller.SignUpHandler)
+	h.POST("/register", controller.RegisterHandler)
 
 	return h
 }
