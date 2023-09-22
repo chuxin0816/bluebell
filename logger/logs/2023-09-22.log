@@ -1,0 +1,9 @@
+{"level":"debug","ts":1695359527.524055,"msg":"HERTZ: Method=GET    absolutePath=/ping                     --> handlerName=github.com/chuxin0816/Scaffold/router.SetUp.func1 (num=2 handlers)"}
+{"level":"debug","ts":1695359527.524242,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/Scaffold/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695359527.524259,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/Scaffold/controller.LoginHandler (num=2 handlers)"}
+{"level":"info","ts":1695359527.524369,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695359527.5244591,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"error","ts":1695359541.5759518,"msg":"SignUp with service error: 用户名已存在"}
+{"level":"info","ts":1695365882.0115578,"msg":"HERTZ: Received signal: interrupt\n"}
+{"level":"info","ts":1695365882.012036,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
+{"level":"info","ts":1695365882.0126562,"msg":"HERTZ: Execute OnShutdownHooks finish"}

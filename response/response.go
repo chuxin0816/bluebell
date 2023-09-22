@@ -6,7 +6,7 @@ import (
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 )
 
-func Response(ctx *app.RequestContext, httpStatus int, code ResCode, msg string, data utils.H) {
+func Response(ctx *app.RequestContext, httpStatus int, code ResCode, data utils.H, msg string) {
 	ctx.JSON(httpStatus, utils.H{
 		"code":    code,
 		"message": msg,
@@ -14,14 +14,16 @@ func Response(ctx *app.RequestContext, httpStatus int, code ResCode, msg string,
 	})
 }
 
-func Success(ctx *app.RequestContext, data utils.H) {
-	Response(ctx, consts.StatusOK, CodeSuccess, CodeSuccess.Message(), data)
+func Success(ctx *app.RequestContext, data utils.H, msg string) {
+	if msg == "" {
+		msg = CodeSuccess.Message()
+	}
+	Response(ctx, consts.StatusOK, CodeSuccess, data, msg)
 }
 
-func Error(ctx *app.RequestContext, code ResCode) {
-	Response(ctx, consts.StatusOK, code, code.Message(), nil)
-}
-
-func ErrorWithMsg(ctx *app.RequestContext, code ResCode, msg string) {
-	Response(ctx, consts.StatusOK, code, msg, nil)
+func Error(ctx *app.RequestContext, code ResCode, msg string) {
+	if msg == "" {
+		msg = code.Message()
+	}
+	Response(ctx, consts.StatusOK, code, nil, msg)
 }

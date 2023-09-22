@@ -3,6 +3,7 @@ package service
 import (
 	"github.com/chuxin0816/Scaffold/dao/mysql"
 	"github.com/chuxin0816/Scaffold/models"
+	"github.com/chuxin0816/Scaffold/pkg/jwt"
 	"github.com/chuxin0816/Scaffold/pkg/snowflake"
 )
 
@@ -23,11 +24,17 @@ func Register(p *models.ParamSignUp) error {
 	return err
 }
 
-func Login(p *models.ParamLogin) error {
+func Login(p *models.ParamLogin) (token string, err error) {
 	user := &models.User{
 		Username: p.Username,
 		Password: p.Password,
 	}
-	err := mysql.Login(user)
-	return err
+	err = mysql.Login(user)
+	if err != nil {
+		return "", err
+	}
+	// 发放token
+	
+	return jwt.GenToken(user.UserID)
+
 }
