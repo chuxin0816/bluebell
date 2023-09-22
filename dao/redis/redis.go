@@ -3,7 +3,7 @@ package redis
 import (
 	"fmt"
 
-	"github.com/chuxin0816/Scaffold/config"
+	"github.com/chuxin0816/bluebell/config"
 	"github.com/go-redis/redis"
 )
 

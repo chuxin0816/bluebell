@@ -4,11 +4,13 @@ import (
 	"context"
 	"strings"
 
-	"github.com/chuxin0816/Scaffold/dao/mysql"
-	"github.com/chuxin0816/Scaffold/pkg/jwt"
-	"github.com/chuxin0816/Scaffold/response"
+	"github.com/chuxin0816/bluebell/dao/mysql"
+	"github.com/chuxin0816/bluebell/pkg/jwt"
+	"github.com/chuxin0816/bluebell/response"
 	"github.com/cloudwego/hertz/pkg/app"
 )
+
+const CtxUserKey = "user"
 
 func AuthMiddleware() app.HandlerFunc {
 	return func(c context.Context, ctx *app.RequestContext) {
@@ -35,7 +37,7 @@ func AuthMiddleware() app.HandlerFunc {
 			ctx.Abort()
 			return
 		}
-		ctx.Set("user", user)
+		ctx.Set(CtxUserKey, user)
 		ctx.Next(c)
 	}
 }

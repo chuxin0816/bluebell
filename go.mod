@@ -1,4 +1,4 @@
-module github.com/chuxin0816/Scaffold
+module github.com/chuxin0816/bluebell
 
 go 1.21.1
 

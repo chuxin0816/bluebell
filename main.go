@@ -3,12 +3,12 @@ package main
 import (
 	"fmt"
 
-	"github.com/chuxin0816/Scaffold/config"
-	"github.com/chuxin0816/Scaffold/dao/mysql"
-	"github.com/chuxin0816/Scaffold/dao/redis"
-	"github.com/chuxin0816/Scaffold/logger"
-	"github.com/chuxin0816/Scaffold/pkg/snowflake"
-	"github.com/chuxin0816/Scaffold/router"
+	"github.com/chuxin0816/bluebell/config"
+	"github.com/chuxin0816/bluebell/dao/mysql"
+	"github.com/chuxin0816/bluebell/dao/redis"
+	"github.com/chuxin0816/bluebell/logger"
+	"github.com/chuxin0816/bluebell/pkg/snowflake"
+	"github.com/chuxin0816/bluebell/router"
 )
 
 func main() {

@@ -3,8 +3,8 @@ package mysql
 import (
 	"fmt"
 
-	"github.com/chuxin0816/Scaffold/config"
-	"github.com/chuxin0816/Scaffold/models"
+	"github.com/chuxin0816/bluebell/config"
+	"github.com/chuxin0816/bluebell/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )

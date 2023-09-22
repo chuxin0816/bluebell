@@ -1,10 +1,10 @@
 package service
 
 import (
-	"github.com/chuxin0816/Scaffold/dao/mysql"
-	"github.com/chuxin0816/Scaffold/models"
-	"github.com/chuxin0816/Scaffold/pkg/jwt"
-	"github.com/chuxin0816/Scaffold/pkg/snowflake"
+	"github.com/chuxin0816/bluebell/dao/mysql"
+	"github.com/chuxin0816/bluebell/models"
+	"github.com/chuxin0816/bluebell/pkg/jwt"
+	"github.com/chuxin0816/bluebell/pkg/snowflake"
 )
 
 func Register(p *models.ParamSignUp) error {

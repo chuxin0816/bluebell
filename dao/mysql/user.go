@@ -3,7 +3,7 @@ package mysql
 import (
 	"errors"
 
-	"github.com/chuxin0816/Scaffold/models"
+	"github.com/chuxin0816/bluebell/models"
 	"golang.org/x/crypto/bcrypt"
 )
 
