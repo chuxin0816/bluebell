@@ -13,8 +13,6 @@ import (
 	"github.com/cloudwego/hertz/pkg/common/utils"
 )
 
-const CtxUserKey = "user"
-
 func RegisterHandler(c context.Context, ctx *app.RequestContext) {
 	// 从请求中获取参数
 	p := new(models.ParamSignUp)

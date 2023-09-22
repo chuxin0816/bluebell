@@ -4,7 +4,6 @@ import (
 	"context"
 	"strings"
 
-	"github.com/chuxin0816/bluebell/controller"
 	"github.com/chuxin0816/bluebell/dao/mysql"
 	"github.com/chuxin0816/bluebell/pkg/jwt"
 	"github.com/chuxin0816/bluebell/response"
@@ -36,7 +35,7 @@ func AuthMiddleware() app.HandlerFunc {
 			ctx.Abort()
 			return
 		}
-		ctx.Set(controller.CtxUserKey, user)
+		ctx.Set(response.CtxUserKey, user)
 		ctx.Next(c)
 	}
 }
