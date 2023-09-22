@@ -21,7 +21,7 @@ func SetUp(conf *config.HertzConfig) *server.Hertz {
 	))
 
 	h.GET("/ping", middleware.AuthMiddleware(), func(c context.Context, ctx *app.RequestContext) {
-		user := ctx.MustGet(middleware.CtxUserKey).(*models.User)
+		user := ctx.MustGet(controller.CtxUserKey).(*models.User)
 		response.Success(ctx, utils.H{"user": dto.ToUserDto(user)}, "pong")
 	})
 	h.POST("/register", controller.RegisterHandler)
