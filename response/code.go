@@ -4,6 +4,7 @@ type ResCode int
 
 const (
 	CodeSuccess ResCode = 1000 + iota
+	CodeNoAuthority
 	CodeInvalidParam
 	CodeUserExist
 	CodeUserNotExist
@@ -13,6 +14,7 @@ const (
 
 var codeMsgMap = map[ResCode]string{
 	CodeSuccess:         "请求成功",
+	CodeNoAuthority:     "权限不足",
 	CodeInvalidParam:    "请求参数错误",
 	CodeUserExist:       "用户名已存在",
 	CodeUserNotExist:    "用户名不存在",

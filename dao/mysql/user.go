@@ -14,11 +14,18 @@ var (
 	ErrorInvalidPassword = errors.New("密码错误")
 )
 
+// CheckUserExist 检查指定用户ID的用户是否存在
+func CheckUserIDExist(userID int64) (user *models.User, exist bool) {
+	user = new(models.User)
+	db.Where("user_id = ?", userID).First(user)
+	return user, user.ID != 0
+}
+
 // CheckUserExist 检查指定用户名的用户是否存在
-func CheckUserExist(username string) (exist bool) {
-	var user models.User
+func CheckUsernameExist(username string) (user *models.User, exist bool) {
+	user = new(models.User)
 	db.Where("username = ?", username).First(&user)
-	return user.ID != 0
+	return user, user.ID != 0
 }
 
 // InsertUser 向数据库中插入一条新的用户记录

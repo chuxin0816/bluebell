@@ -9,7 +9,7 @@ import (
 
 func Register(p *models.ParamSignUp) error {
 	// 查询用户是否存在
-	if exist := mysql.CheckUserExist(p.Username); exist {
+	if _, exist := mysql.CheckUsernameExist(p.Username); exist {
 		return mysql.ErrorUserExist
 	}
 	// 生成UID
@@ -34,7 +34,7 @@ func Login(p *models.ParamLogin) (token string, err error) {
 		return "", err
 	}
 	// 发放token
-	
+
 	return jwt.GenToken(user.UserID)
 
 }

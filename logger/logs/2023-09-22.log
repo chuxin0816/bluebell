@@ -7,3 +7,27 @@
 {"level":"info","ts":1695365882.0115578,"msg":"HERTZ: Received signal: interrupt\n"}
 {"level":"info","ts":1695365882.012036,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
 {"level":"info","ts":1695365882.0126562,"msg":"HERTZ: Execute OnShutdownHooks finish"}
+{"level":"debug","ts":1695367822.9444969,"msg":"HERTZ: Method=GET    absolutePath=/ping                     --> handlerName=github.com/chuxin0816/Scaffold/router.SetUp.func1 (num=2 handlers)"}
+{"level":"debug","ts":1695367822.945102,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/Scaffold/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695367822.9451342,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/Scaffold/controller.LoginHandler (num=2 handlers)"}
+{"level":"info","ts":1695367822.945224,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695367822.94535,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"info","ts":1695367850.6341472,"msg":"HERTZ: Received signal: interrupt\n"}
+{"level":"info","ts":1695367850.6352818,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
+{"level":"info","ts":1695367855.636568,"msg":"HERTZ: Execute OnShutdownHooks timeout: error=context deadline exceeded"}
+{"level":"debug","ts":1695367887.645301,"msg":"HERTZ: Method=GET    absolutePath=/ping                     --> handlerName=github.com/chuxin0816/Scaffold/router.SetUp.func1 (num=3 handlers)"}
+{"level":"debug","ts":1695367887.645683,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/Scaffold/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695367887.645706,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/Scaffold/controller.LoginHandler (num=2 handlers)"}
+{"level":"info","ts":1695367887.645878,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695367887.645971,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"info","ts":1695368099.569539,"msg":"HERTZ: Received signal: interrupt\n"}
+{"level":"info","ts":1695368099.570526,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
+{"level":"info","ts":1695368104.571754,"msg":"HERTZ: Execute OnShutdownHooks finish"}
+{"level":"debug","ts":1695368107.166864,"msg":"HERTZ: Method=GET    absolutePath=/ping                     --> handlerName=github.com/chuxin0816/Scaffold/router.SetUp.func1 (num=3 handlers)"}
+{"level":"debug","ts":1695368107.167032,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/Scaffold/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695368107.167048,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/Scaffold/controller.LoginHandler (num=2 handlers)"}
+{"level":"info","ts":1695368107.167186,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695368107.167274,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"info","ts":1695368132.4785569,"msg":"HERTZ: Received signal: interrupt\n"}
+{"level":"info","ts":1695368132.478685,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
+{"level":"info","ts":1695368136.479946,"msg":"HERTZ: Execute OnShutdownHooks finish"}
