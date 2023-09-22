@@ -1,8 +1,6 @@
 package service
 
 import (
-	"errors"
-
 	"github.com/chuxin0816/Scaffold/dao/mysql"
 	"github.com/chuxin0816/Scaffold/models"
 	"github.com/chuxin0816/Scaffold/pkg/snowflake"
@@ -11,7 +9,7 @@ import (
 func Register(p *models.ParamSignUp) error {
 	// 查询用户是否存在
 	if exist := mysql.CheckUserExist(p.Username); exist {
-		return errors.New("用户已存在")
+		return mysql.ErrorUserExist
 	}
 	// 生成UID
 	userID := snowflake.GenerateID()

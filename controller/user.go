@@ -2,13 +2,14 @@ package controller
 
 import (
 	"context"
+	"errors"
 
+	"github.com/chuxin0816/Scaffold/dao/mysql"
 	"github.com/chuxin0816/Scaffold/models"
+	"github.com/chuxin0816/Scaffold/response"
 	"github.com/chuxin0816/Scaffold/service"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
-	"github.com/cloudwego/hertz/pkg/common/utils"
-	"github.com/cloudwego/hertz/pkg/protocol/consts"
 )
 
 func RegisterHandler(c context.Context, ctx *app.RequestContext) {
@@ -16,16 +17,20 @@ func RegisterHandler(c context.Context, ctx *app.RequestContext) {
 	p := new(models.ParamSignUp)
 	if err := ctx.BindAndValidate(p); err != nil {
 		hlog.Error("SignUp with invalid param: ", err)
-		ctx.JSON(consts.StatusOK, utils.H{"message": "注册失败"})
+		response.Error(ctx, response.CodeInvalidParam)
 		return
 	}
 	// 调用service层处理业务逻辑
 	if err := service.Register(p); err != nil {
 		hlog.Error("SignUp with service error: ", err)
-		ctx.JSON(consts.StatusOK, utils.H{"message": "注册失败"})
+		if errors.Is(err, mysql.ErrorUserExist) {
+			response.Error(ctx, response.CodeUserExist)
+			return
+		}
+		response.Error(ctx, response.CodeServerBusy)
 		return
 	}
-	ctx.JSON(consts.StatusOK, utils.H{"message": "注册成功"})
+	response.Success(ctx, nil)
 }
 
 func LoginHandler(c context.Context, ctx *app.RequestContext) {
@@ -33,14 +38,14 @@ func LoginHandler(c context.Context, ctx *app.RequestContext) {
 	p := new(models.ParamLogin)
 	if err := ctx.BindAndValidate(p); err != nil {
 		hlog.Error("SignUp with invalid param: ", err)
-		ctx.JSON(consts.StatusOK, utils.H{"message": "用户名或密码错误"})
+		response.Error(ctx, response.CodeInvalidParam)
 		return
 	}
 	// 调用service层处理业务逻辑
 	if err := service.Login(p); err != nil {
 		hlog.Error("Login with service error: ", err)
-		ctx.JSON(consts.StatusOK, utils.H{"message": "用户名或密码错误"})
+		response.Error(ctx, response.CodeInvalidPassword)
 		return
 	}
-	ctx.JSON(consts.StatusOK, utils.H{"message": "登录成功"})
+	response.Success(ctx, nil)
 }
