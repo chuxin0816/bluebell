@@ -22,7 +22,8 @@ func RegisterHandler(c context.Context, ctx *app.RequestContext) {
 		return
 	}
 	// 调用service层处理业务逻辑
-	if err := service.Register(p); err != nil {
+	token, err := service.Register(p)
+	if err != nil {
 		hlog.Error("SignUp with service error: ", err)
 		if errors.Is(err, mysql.ErrorUserExist) {
 			response.Error(ctx, response.CodeUserExist, "")
@@ -31,7 +32,7 @@ func RegisterHandler(c context.Context, ctx *app.RequestContext) {
 		response.Error(ctx, response.CodeServerBusy, "")
 		return
 	}
-	response.Success(ctx, nil, "注册成功")
+	response.Success(ctx, utils.H{"token": token}, "注册成功")
 }
 
 func LoginHandler(c context.Context, ctx *app.RequestContext) {

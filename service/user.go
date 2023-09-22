@@ -7,10 +7,10 @@ import (
 	"github.com/chuxin0816/bluebell/pkg/snowflake"
 )
 
-func Register(p *models.ParamSignUp) error {
+func Register(p *models.ParamSignUp) (token string, err error) {
 	// 查询用户是否存在
 	if _, exist := mysql.CheckUsernameExist(p.Username); exist {
-		return mysql.ErrorUserExist
+		return "", mysql.ErrorUserExist
 	}
 	// 生成UID
 	userID := snowflake.GenerateID()
@@ -20,8 +20,12 @@ func Register(p *models.ParamSignUp) error {
 		Password: p.Password,
 	}
 	// 保存用户信息
-	err := mysql.InsertUser(user)
-	return err
+	err = mysql.InsertUser(user)
+	if err != nil {
+		return "", err
+	}
+	// 发放token
+	return jwt.GenToken(user.UserID)
 }
 
 func Login(p *models.ParamLogin) (token string, err error) {
@@ -34,7 +38,5 @@ func Login(p *models.ParamLogin) (token string, err error) {
 		return "", err
 	}
 	// 发放token
-
 	return jwt.GenToken(user.UserID)
-
 }
