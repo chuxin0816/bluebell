@@ -19,3 +19,8 @@
 {"level":"debug","ts":1695455136.689486,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
 {"level":"info","ts":1695455136.689631,"msg":"HERTZ: Using network library=netpoll"}
 {"level":"info","ts":1695455136.689742,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"debug","ts":1695458336.633617,"msg":"HERTZ: Method=GET    absolutePath=/ping                     --> handlerName=github.com/chuxin0816/bluebell/router.SetUp.func1 (num=3 handlers)"}
+{"level":"debug","ts":1695458336.6341288,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695458336.634152,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"info","ts":1695458336.634239,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695458336.634311,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
