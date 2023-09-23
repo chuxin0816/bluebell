@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/chuxin0816/Scaffold/config"
+	"github.com/chuxin0816/bluebell/config"
 	"github.com/redis/go-redis/v9"
 )
 

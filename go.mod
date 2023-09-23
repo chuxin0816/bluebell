@@ -4,7 +4,6 @@ go 1.21.1
 
 require (
 	github.com/bwmarrin/snowflake v0.3.0
-	github.com/chuxin0816/Scaffold v0.0.0-20230919064432-f9d71fd08288
 	github.com/cloudwego/hertz v0.6.8
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/fsnotify/fsnotify v1.6.0
