@@ -1,4 +1,4 @@
-package myJwt
+package jwt
 
 import (
 	"errors"

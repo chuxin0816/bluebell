@@ -4,7 +4,7 @@ import (
 	"github.com/chuxin0816/bluebell/dao/mysql"
 	"github.com/chuxin0816/bluebell/models"
 
-	"github.com/chuxin0816/bluebell/pkg/myJwt"
+	"github.com/chuxin0816/bluebell/pkg/jwt"
 	"github.com/chuxin0816/bluebell/pkg/snowflake"
 )
 
@@ -26,7 +26,7 @@ func Register(p *models.ParamSignUp) (token string, err error) {
 		return "", err
 	}
 	// 发放token
-	return myJwt.GenToken(user.UserID)
+	return jwt.GenToken(user.UserID)
 }
 
 func Login(p *models.ParamLogin) (token string, err error) {
@@ -39,5 +39,5 @@ func Login(p *models.ParamLogin) (token string, err error) {
 		return "", err
 	}
 	// 发放token
-	return myJwt.GenToken(user.UserID)
+	return jwt.GenToken(user.UserID)
 }

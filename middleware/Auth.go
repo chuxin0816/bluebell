@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/chuxin0816/bluebell/dao/mysql"
-	"github.com/chuxin0816/bluebell/pkg/myJwt"
+	"github.com/chuxin0816/bluebell/pkg/jwt"
 	"github.com/chuxin0816/bluebell/response"
 	"github.com/cloudwego/hertz/pkg/app"
 )
@@ -22,7 +22,7 @@ func AuthMiddleware() app.HandlerFunc {
 		// 去掉token前缀
 		tokenString = tokenString[7:]
 		// 解析token
-		claims, err := myJwt.ParseToken(tokenString)
+		claims, err := jwt.ParseToken(tokenString)
 		if err != nil {
 			response.Error(ctx, response.CodeNoAuthority, "")
 			ctx.Abort()
