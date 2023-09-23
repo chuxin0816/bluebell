@@ -5,6 +5,7 @@ BINARY="bluebell"
 all: gotool	build
 
 gotool:
+	@go mod tidy
 	@go fmt ./
 	@go vet ./
 
