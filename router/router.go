@@ -21,7 +21,7 @@ func SetUp(conf *config.HertzConfig) *server.Hertz {
 	communityRouter := h.Group("/community", middleware.AuthMiddleware())
 	{
 		communityController := controller.NewCommunityController()
-		communityRouter.GET("/", communityController.GetCommunityList)
+		communityRouter.GET("/", communityController.List)
 	}
 
 	return h

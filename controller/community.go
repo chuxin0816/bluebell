@@ -9,14 +9,18 @@ import (
 	"github.com/cloudwego/hertz/pkg/common/utils"
 )
 
-type communityController struct{}
-
-func NewCommunityController() *communityController {
-	mysql.NewCommunity()
-	return &communityController{}
+type ICommunityController interface {
+	List(c context.Context, ctx *app.RequestContext)
 }
 
-func (community *communityController) GetCommunityList(c context.Context, ctx *app.RequestContext) {
+type CommunityController struct{}
+
+func NewCommunityController() ICommunityController {
+	mysql.NewCommunity()
+	return &CommunityController{}
+}
+
+func (community *CommunityController) List(c context.Context, ctx *app.RequestContext) {
 	communityList := mysql.GetCommunityList()
 	response.Success(ctx, utils.H{"community_list": communityList}, "")
 }

@@ -1,0 +1,60 @@
+{"level":"debug","ts":1695488469.051743,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695488469.052002,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695488469.052028,"msg":"HERTZ: Method=GET    absolutePath=/info                     --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695488469.0591512,"msg":"HERTZ: Method=GET    absolutePath=/community/               --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"info","ts":1695488469.059372,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695488469.059517,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"debug","ts":1695488554.6934478,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695488554.6935701,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695488554.693585,"msg":"HERTZ: Method=GET    absolutePath=/info                     --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695488554.699821,"msg":"HERTZ: Method=GET    absolutePath=/community/               --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"info","ts":1695488554.699971,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695488554.7000508,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"debug","ts":1695488681.012154,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695488681.012335,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695488681.0123541,"msg":"HERTZ: Method=GET    absolutePath=/info                     --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695488681.019304,"msg":"HERTZ: Method=GET    absolutePath=/community/               --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"info","ts":1695488681.019538,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695488681.019688,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"debug","ts":1695488780.144523,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695488780.144738,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695488780.144763,"msg":"HERTZ: Method=GET    absolutePath=/info                     --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695488780.153074,"msg":"HERTZ: Method=GET    absolutePath=/community/               --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"info","ts":1695488780.153332,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695488780.153476,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"debug","ts":1695488818.27321,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695488818.27345,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695488818.273474,"msg":"HERTZ: Method=GET    absolutePath=/info                     --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695488818.283665,"msg":"HERTZ: Method=GET    absolutePath=/community/               --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"info","ts":1695488818.283921,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695488818.284082,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"debug","ts":1695488830.259704,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695488830.25984,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695488830.259861,"msg":"HERTZ: Method=GET    absolutePath=/info                     --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695488830.2659042,"msg":"HERTZ: Method=GET    absolutePath=/community/               --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"info","ts":1695488830.266036,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695488830.266156,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"debug","ts":1695489049.783833,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695489049.783937,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695489049.78395,"msg":"HERTZ: Method=GET    absolutePath=/info                     --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695489049.7906911,"msg":"HERTZ: Method=GET    absolutePath=/community/               --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"info","ts":1695489049.790813,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695489049.790893,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"debug","ts":1695489069.1922848,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695489069.192397,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695489069.192416,"msg":"HERTZ: Method=GET    absolutePath=/info                     --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695489069.198124,"msg":"HERTZ: Method=GET    absolutePath=/community/               --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"info","ts":1695489069.198335,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695489069.1984909,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"debug","ts":1695489290.075569,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695489290.0756779,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695489290.075701,"msg":"HERTZ: Method=GET    absolutePath=/info                     --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695489290.081321,"msg":"HERTZ: Method=GET    absolutePath=/community/               --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"info","ts":1695489290.08143,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695489290.081509,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"debug","ts":1695489717.61516,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695489717.615299,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695489717.615316,"msg":"HERTZ: Method=GET    absolutePath=/info                     --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695489717.6245382,"msg":"HERTZ: Method=GET    absolutePath=/community/               --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"info","ts":1695489717.6247191,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695489717.624809,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
