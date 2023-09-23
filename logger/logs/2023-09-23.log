@@ -1,0 +1,16 @@
+{"level":"debug","ts":1695402641.0798888,"msg":"HERTZ: Method=GET    absolutePath=/ping                     --> handlerName=github.com/chuxin0816/bluebell/router.SetUp.func1 (num=3 handlers)"}
+{"level":"debug","ts":1695402641.080139,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695402641.080161,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"info","ts":1695402641.080352,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695402641.0804842,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"info","ts":1695402644.856663,"msg":"HERTZ: Received signal: interrupt\n"}
+{"level":"info","ts":1695402644.8568661,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
+{"level":"info","ts":1695402644.85712,"msg":"HERTZ: Execute OnShutdownHooks finish"}
+{"level":"debug","ts":1695439936.5211022,"msg":"HERTZ: Method=GET    absolutePath=/ping                     --> handlerName=github.com/chuxin0816/bluebell/router.SetUp.func1 (num=3 handlers)"}
+{"level":"debug","ts":1695439936.5216389,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695439936.5216691,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"info","ts":1695439936.521853,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695439936.521971,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
+{"level":"info","ts":1695439937.733375,"msg":"HERTZ: Received signal: interrupt\n"}
+{"level":"info","ts":1695439937.73349,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
+{"level":"info","ts":1695439937.733679,"msg":"HERTZ: Execute OnShutdownHooks finish"}
