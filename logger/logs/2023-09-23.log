@@ -14,3 +14,8 @@
 {"level":"info","ts":1695439937.733375,"msg":"HERTZ: Received signal: interrupt\n"}
 {"level":"info","ts":1695439937.73349,"msg":"HERTZ: Begin graceful shutdown, wait at most num=5 seconds..."}
 {"level":"info","ts":1695439937.733679,"msg":"HERTZ: Execute OnShutdownHooks finish"}
+{"level":"debug","ts":1695455136.6891131,"msg":"HERTZ: Method=GET    absolutePath=/ping                     --> handlerName=github.com/chuxin0816/bluebell/router.SetUp.func1 (num=3 handlers)"}
+{"level":"debug","ts":1695455136.689458,"msg":"HERTZ: Method=POST   absolutePath=/register                 --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695455136.689486,"msg":"HERTZ: Method=POST   absolutePath=/login                    --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"info","ts":1695455136.689631,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695455136.689742,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8080"}
