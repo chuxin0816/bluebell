@@ -1,18 +1,12 @@
 package router
 
 import (
-	"context"
 	"fmt"
 
 	"github.com/chuxin0816/bluebell/config"
 	"github.com/chuxin0816/bluebell/controller"
-	"github.com/chuxin0816/bluebell/dto"
 	"github.com/chuxin0816/bluebell/middleware"
-	"github.com/chuxin0816/bluebell/models"
-	"github.com/chuxin0816/bluebell/response"
-	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/app/server"
-	"github.com/cloudwego/hertz/pkg/common/utils"
 )
 
 func SetUp(conf *config.HertzConfig) *server.Hertz {
@@ -20,12 +14,15 @@ func SetUp(conf *config.HertzConfig) *server.Hertz {
 		fmt.Sprintf("%s:%d", conf.Host, conf.Port),
 	))
 
-	h.GET("/ping", middleware.AuthMiddleware(), func(c context.Context, ctx *app.RequestContext) {
-		user := ctx.MustGet(response.CtxUserKey).(*models.User)
-		response.Success(ctx, utils.H{"user": dto.ToUserDto(user)}, "pong")
-	})
 	h.POST("/register", controller.RegisterHandler)
 	h.POST("/login", controller.LoginHandler)
+	h.GET("/info", middleware.AuthMiddleware(), controller.InfoHandler)
+
+	communityRouter := h.Group("/community", middleware.AuthMiddleware())
+	{
+		communityController := controller.NewCommunityController()
+		communityRouter.GET("/", communityController.GetCommunityList)
+	}
 
 	return h
 }
