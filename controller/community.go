@@ -5,7 +5,9 @@ import (
 
 	"github.com/chuxin0816/bluebell/dao/mysql"
 	"github.com/chuxin0816/bluebell/response"
+	"github.com/chuxin0816/bluebell/service"
 	"github.com/cloudwego/hertz/pkg/app"
+	"github.com/cloudwego/hertz/pkg/common/hlog"
 	"github.com/cloudwego/hertz/pkg/common/utils"
 )
 
@@ -21,6 +23,11 @@ func NewCommunityController() ICommunityController {
 }
 
 func (community *CommunityController) List(c context.Context, ctx *app.RequestContext) {
-	communityList := mysql.GetCommunityList()
-	response.Success(ctx, utils.H{"community_list": communityList}, "")
+	communityList, err := service.GetCommunityList()
+	if err != nil {
+		hlog.Error("GetCommunityList with mysql error: ", err)
+		response.Error(ctx, response.CodeServerBusy, "")
+	}
+	total := len(communityList)
+	response.Success(ctx, utils.H{"community_list": communityList, "total": total}, "")
 }
