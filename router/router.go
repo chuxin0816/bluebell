@@ -22,6 +22,7 @@ func SetUp(conf *config.HertzConfig) *server.Hertz {
 	{
 		communityController := controller.NewCommunityController()
 		communityRouter.GET("/", communityController.List)
+		communityRouter.GET("/:id", communityController.Show)
 	}
 
 	return h

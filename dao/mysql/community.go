@@ -21,3 +21,12 @@ func GetCommunityList() (communities []models.Community, err error) {
 	}
 	return communities, nil
 }
+
+func GetCommunityByID(communityID string) (community *models.Community, err error) {
+	community = new(models.Community)
+	db.Where("community_id = ?", communityID).First(community)
+	if community == nil {
+		return nil, ErrorCommunityNotFound
+	}
+	return community, nil
+}

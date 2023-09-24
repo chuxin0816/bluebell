@@ -12,7 +12,6 @@ type UserDto struct {
 	Email    string `json:"email"`
 	Gender   uint   `json:"gender"`
 	CreateAt time.Time
-	UpdateAt time.Time
 }
 
 func ToUserDto(user *models.User) *UserDto {
@@ -22,6 +21,5 @@ func ToUserDto(user *models.User) *UserDto {
 		Email:    user.Email,
 		Gender:   user.Gender,
 		CreateAt: user.CreatedAt,
-		UpdateAt: user.UpdatedAt,
 	}
 }
