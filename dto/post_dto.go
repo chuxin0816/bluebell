@@ -7,7 +7,6 @@ import (
 )
 
 type PostDto struct {
-	ID          int64  `gorm:"type:bigint(20)"`
 	PostID      int64  `gorm:"type:bigint(20);not null"`
 	AuthorID    int64  `gorm:"type:bigint(20)"`
 	CommunityID int    `gorm:"type:bigint(20)"`
