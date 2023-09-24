@@ -29,17 +29,21 @@ func (cc *CommunityController) List(c context.Context, ctx *app.RequestContext) 
 	if err != nil {
 		hlog.Error("GetCommunityList with service error: ", err)
 		response.Error(ctx, response.CodeServerBusy, "")
+		return
 	}
 	total := len(communityList)
 	response.Success(ctx, utils.H{"community_list": dto.ToCommunityDtoList(communityList), "total": total}, "")
 }
 
 func (cc *CommunityController) Show(c context.Context, ctx *app.RequestContext) {
+	// 获取参数
 	communityID := ctx.Param("id")
+
 	community, err := service.GetCommunityByID(communityID)
 	if err != nil {
 		hlog.Error("GetCommunityByID with service error: ", err)
 		response.Error(ctx, response.CodeServerBusy, "")
+		return
 	}
 	response.Success(ctx, utils.H{"community": dto.ToCommunityDto(community)}, "")
 }

@@ -7,6 +7,7 @@ import (
 	"github.com/chuxin0816/bluebell/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 )
 
 var db *gorm.DB
@@ -19,7 +20,7 @@ func Init(conf *config.MysqlConfig) (err error) {
 		conf.Port,
 		conf.DBName,
 	)
-	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{Logger: logger.Default.LogMode(logger.Silent)})
 	if err != nil {
 		return
 	}
