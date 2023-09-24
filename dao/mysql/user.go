@@ -28,8 +28,8 @@ func CheckUsernameExist(username string) (user *models.User, exist bool) {
 	return user, user.ID != 0
 }
 
-// InsertUser 向数据库中插入一条新的用户记录
-func InsertUser(user *models.User) error {
+// CreateUser 向数据库中插入一条新的用户记录
+func CreateUser(user *models.User) error {
 	// 加密密码
 	password, err := bcrypt.GenerateFromPassword([]byte((user.Password)), bcrypt.DefaultCost)
 	if err != nil {

@@ -19,9 +19,9 @@ type ICommunityController interface {
 
 type CommunityController struct{}
 
-func NewCommunityController() ICommunityController {
-	mysql.NewCommunity()
-	return &CommunityController{}
+func NewCommunityController() (ICommunityController, error) {
+	err := mysql.NewCommunity()
+	return &CommunityController{}, err
 }
 
 func (cc *CommunityController) List(c context.Context, ctx *app.RequestContext) {

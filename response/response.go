@@ -6,8 +6,6 @@ import (
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 )
 
-const CtxUserKey = "user"
-
 func Response(ctx *app.RequestContext, httpStatus int, code ResCode, data utils.H, msg string) {
 	ctx.JSON(httpStatus, utils.H{
 		"code":    code,

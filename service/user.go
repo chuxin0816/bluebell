@@ -21,7 +21,7 @@ func Register(p *models.ParamRegister) (token string, err error) {
 		Password: p.Password,
 	}
 	// 保存用户信息
-	err = mysql.InsertUser(user)
+	err = mysql.CreateUser(user)
 	if err != nil {
 		return "", err
 	}

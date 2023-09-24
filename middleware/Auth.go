@@ -10,6 +10,8 @@ import (
 	"github.com/cloudwego/hertz/pkg/app"
 )
 
+const CtxUserKey = "user"
+
 func AuthMiddleware() app.HandlerFunc {
 	return func(c context.Context, ctx *app.RequestContext) {
 		tokenString := string(ctx.GetHeader("Authorization"))
@@ -35,7 +37,7 @@ func AuthMiddleware() app.HandlerFunc {
 			ctx.Abort()
 			return
 		}
-		ctx.Set(response.CtxUserKey, user)
+		ctx.Set(CtxUserKey, user)
 		ctx.Next(c)
 	}
 }

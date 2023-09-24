@@ -7,11 +7,16 @@ import (
 )
 
 var (
-	ErrorCommunityNotFound = errors.New("没有找到相关社区")
+	ErrorCommunityNotFound    = errors.New("没有找到相关社区")
+	ErrorAutoMigrateCommunity = errors.New("迁移社区表失败")
 )
 
-func NewCommunity() {
-	db.AutoMigrate(&models.Community{})
+func NewCommunity() error {
+	err := db.AutoMigrate(&models.Community{})
+	if err != nil {
+		return ErrorAutoMigrateCommunity
+	}
+	return nil
 }
 
 func GetCommunityList() (communities []models.Community, err error) {
