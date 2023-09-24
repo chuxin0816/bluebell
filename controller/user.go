@@ -3,6 +3,7 @@ package controller
 import (
 	"context"
 	"errors"
+	"fmt"
 
 	"github.com/chuxin0816/bluebell/dao/mysql"
 	"github.com/chuxin0816/bluebell/dto"
@@ -16,7 +17,7 @@ import (
 
 func RegisterHandler(c context.Context, ctx *app.RequestContext) {
 	// 从请求中获取参数
-	p := new(models.ParamSignUp)
+	p := new(models.ParamRegister)
 	if err := ctx.BindAndValidate(p); err != nil {
 		hlog.Error("SignUp with invalid param: ", err)
 		response.Error(ctx, response.CodeInvalidParam, "")
@@ -40,6 +41,7 @@ func LoginHandler(c context.Context, ctx *app.RequestContext) {
 	// 从请求中获取参数
 	p := new(models.ParamLogin)
 	if err := ctx.BindAndValidate(p); err != nil {
+		fmt.Println(p.Username, p.Password)
 		hlog.Error("SignUp with invalid param: ", err)
 		response.Error(ctx, response.CodeInvalidParam, "")
 		return

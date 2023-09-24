@@ -13,12 +13,12 @@ func SetUp(conf *config.HertzConfig) *server.Hertz {
 	h := server.Default(server.WithHostPorts(
 		fmt.Sprintf("%s:%d", conf.Host, conf.Port),
 	))
+	v1 := h.Group("/api/v1")
+	v1.POST("/signup", controller.RegisterHandler)
+	v1.POST("/login", controller.LoginHandler)
+	v1.GET("/info", middleware.AuthMiddleware(), controller.InfoHandler)
 
-	h.POST("/register", controller.RegisterHandler)
-	h.POST("/login", controller.LoginHandler)
-	h.GET("/info", middleware.AuthMiddleware(), controller.InfoHandler)
-
-	communityRouter := h.Group("/community", middleware.AuthMiddleware())
+	communityRouter := v1.Group("/community", middleware.AuthMiddleware())
 	{
 		communityController := controller.NewCommunityController()
 		communityRouter.GET("/", communityController.List)

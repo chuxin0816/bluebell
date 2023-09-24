@@ -8,7 +8,7 @@ import (
 	"github.com/chuxin0816/bluebell/pkg/snowflake"
 )
 
-func Register(p *models.ParamSignUp) (token string, err error) {
+func Register(p *models.ParamRegister) (token string, err error) {
 	// 查询用户是否存在
 	if _, exist := mysql.CheckUsernameExist(p.Username); exist {
 		return "", mysql.ErrorUserExist
