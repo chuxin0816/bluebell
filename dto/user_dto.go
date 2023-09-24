@@ -10,7 +10,7 @@ type UserDto struct {
 	UserID   int64  `json:"user_id"`
 	Username string `json:"username"`
 	Email    string `json:"email"`
-	Gender   uint   `json:"gender"`
+	Gender   int    `json:"gender"`
 	CreateAt time.Time
 }
 
