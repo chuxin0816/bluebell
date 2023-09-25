@@ -1,13 +1,14 @@
 package dto
 
 import (
+	"strconv"
 	"time"
 
 	"github.com/chuxin0816/bluebell/models"
 )
 
 type CommunityDto struct {
-	CommunityID   int    `json:"community_id"`
+	CommunityID   string `json:"community_id"`
 	CommunityName string `json:"community_name"`
 	Introduction  string `json:"introduction"`
 	CreatedAt     time.Time
@@ -15,7 +16,7 @@ type CommunityDto struct {
 
 func ToCommunityDto(community *models.Community) *CommunityDto {
 	return &CommunityDto{
-		CommunityID:   community.CommunityID,
+		CommunityID:   strconv.Itoa(community.CommunityID),
 		CommunityName: community.CommunityName,
 		Introduction:  community.Introduction,
 		CreatedAt:     community.CreatedAt,

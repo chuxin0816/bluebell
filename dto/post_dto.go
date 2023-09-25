@@ -1,6 +1,7 @@
 package dto
 
 import (
+	"strconv"
 	"time"
 
 	"github.com/chuxin0816/bluebell/dao/mysql"
@@ -8,8 +9,8 @@ import (
 )
 
 type PostDto struct {
-	PostID     int64         `json:"post_id"`
-	Status     int           `json:"status"`
+	PostID     string        `json:"post_id"`
+	Status     string        `json:"status"`
 	Community  *CommunityDto `json:"community"`
 	AuthorName string        `json:"author_name"`
 	Title      string        `json:"title"`
@@ -29,8 +30,8 @@ func ToPostDto(post *models.Post) (*PostDto, error) {
 		return nil, mysql.ErrorCommunityNotFound
 	}
 	return &PostDto{
-		PostID:     post.PostID,
-		Status:     post.Status,
+		PostID:     strconv.FormatInt(post.PostID, 10),
+		Status:     strconv.Itoa(post.Status),
 		AuthorName: authorName,
 		Community:  ToCommunityDto(community),
 		Title:      post.Title,
