@@ -36,6 +36,7 @@ func SetUp(conf *config.HertzConfig) *server.Hertz {
 			hlog.Error("NewPostController with err: ", err)
 		}
 		postRouter.POST("/", postController.Create)
+		postRouter.GET("/:id", postController.Show)
 	}
 
 	return h

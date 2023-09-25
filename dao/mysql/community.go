@@ -27,7 +27,7 @@ func GetCommunityList() (communities []models.Community, err error) {
 	return communities, nil
 }
 
-func GetCommunityByID(communityID string) (community *models.Community, err error) {
+func GetCommunityByID(communityID int) (community *models.Community, err error) {
 	community = new(models.Community)
 	db.Where("community_id = ?", communityID).First(community)
 	if community.ID == 0 {

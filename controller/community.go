@@ -2,6 +2,7 @@ package controller
 
 import (
 	"context"
+	"strconv"
 
 	"github.com/chuxin0816/bluebell/dao/mysql"
 	"github.com/chuxin0816/bluebell/dto"
@@ -37,8 +38,13 @@ func (cc *CommunityController) List(c context.Context, ctx *app.RequestContext) 
 
 func (cc *CommunityController) Show(c context.Context, ctx *app.RequestContext) {
 	// 获取参数
-	communityID := ctx.Param("id")
-
+	communityID, err := strconv.Atoi(ctx.Param("id"))
+	if err != nil {
+		hlog.Error("GetCommunityByID with invalid param: ", err)
+		response.Error(ctx, response.CodeInvalidParam, "")
+		return
+	}
+	// 调用service层处理业务逻辑
 	community, err := service.GetCommunityByID(communityID)
 	if err != nil {
 		hlog.Error("GetCommunityByID with service error: ", err)

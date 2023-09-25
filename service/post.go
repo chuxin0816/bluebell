@@ -19,3 +19,7 @@ func CreatePost(pp *models.ParamPost) (err error) {
 	}
 	return mysql.CreatePost(p)
 }
+
+func GetPost(postID int64) (post *models.Post, err error) {
+	return mysql.GetPost(postID)
+}

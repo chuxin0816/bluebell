@@ -10,7 +10,7 @@ func GetCommunityList() (communities []models.Community, err error) {
 	return communityList, err
 }
 
-func GetCommunityByID(communityID string) (community *models.Community, err error) {
+func GetCommunityByID(communityID int) (community *models.Community, err error) {
 	community, err = mysql.GetCommunityByID(communityID)
 	return community, err
 }

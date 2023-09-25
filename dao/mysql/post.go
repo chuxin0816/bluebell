@@ -18,3 +18,12 @@ func NewPost() error {
 func CreatePost(p *models.Post) error {
 	return db.Create(p).Error
 }
+
+func GetPost(postID int64) (post *models.Post, err error) {
+	post = new(models.Post)
+	db.Where("post_id=?", postID).First(post)
+	if post.ID == 0 {
+		return nil, ErrorPostNotFound
+	}
+	return post, nil
+}
