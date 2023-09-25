@@ -18,6 +18,7 @@ import (
 type IPostController interface {
 	Create(c context.Context, ctx *app.RequestContext)
 	Show(c context.Context, ctx *app.RequestContext)
+	List(c context.Context, ctx *app.RequestContext)
 }
 
 type PostController struct{}
@@ -71,4 +72,21 @@ func (pp *PostController) Show(c context.Context, ctx *app.RequestContext) {
 		return
 	}
 	response.Success(ctx, utils.H{"post": postDto}, "")
+}
+
+func (pp *PostController) List(c context.Context, ctx *app.RequestContext) {
+	// 调用service层处理业务逻辑
+	postList, err := service.GetPostList()
+	if err != nil {
+		hlog.Error("Get post list with service error: ", err)
+		response.Error(ctx, response.CodeServerBusy, "")
+		return
+	}
+	postDtoList, err := dto.ToPostDtoList(postList)
+	if err != nil {
+		hlog.Error("Get post list with dto error: ", err)
+		response.Error(ctx, response.CodeServerBusy, "")
+		return
+	}
+	response.Success(ctx, utils.H{"post_list": postDtoList}, "")
 }

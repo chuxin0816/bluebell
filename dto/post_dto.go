@@ -39,3 +39,14 @@ func ToPostDto(post *models.Post) (*PostDto, error) {
 		UpdatedAt:  post.UpdatedAt,
 	}, nil
 }
+
+func ToPostDtoList(postList []models.Post) (postDtoList []PostDto, err error) {
+	for _, post := range postList {
+		postDto, err := ToPostDto(&post)
+		if err != nil {
+			return nil, err
+		}
+		postDtoList = append(postDtoList, *postDto)
+	}
+	return postDtoList, nil
+}

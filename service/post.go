@@ -7,6 +7,10 @@ import (
 )
 
 func CreatePost(pp *models.ParamPost) (err error) {
+	_, err = mysql.GetCommunityByID(pp.CommunityID)
+	if err != nil {
+		return mysql.ErrorCommunityNotFound
+	}
 	// 生成postID
 	postID := snowflake.GenerateID()
 	p := &models.Post{
@@ -22,4 +26,8 @@ func CreatePost(pp *models.ParamPost) (err error) {
 
 func GetPost(postID int64) (post *models.Post, err error) {
 	return mysql.GetPost(postID)
+}
+
+func GetPostList() (postList []models.Post, err error) {
+	return mysql.GetPostList()
 }

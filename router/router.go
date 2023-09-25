@@ -37,6 +37,7 @@ func SetUp(conf *config.HertzConfig) *server.Hertz {
 		}
 		postRouter.POST("/", postController.Create)
 		postRouter.GET("/:id", postController.Show)
+		postRouter.GET("/", postController.List)
 	}
 
 	return h

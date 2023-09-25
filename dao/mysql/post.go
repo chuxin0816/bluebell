@@ -27,3 +27,11 @@ func GetPost(postID int64) (post *models.Post, err error) {
 	}
 	return post, nil
 }
+
+func GetPostList() (postList []models.Post, err error) {
+	db.Find(&postList)
+	if len(postList) == 0 {
+		return nil, ErrorPostNotFound
+	}
+	return postList, nil
+}
