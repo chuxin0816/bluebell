@@ -75,8 +75,17 @@ func (pp *PostController) Show(c context.Context, ctx *app.RequestContext) {
 }
 
 func (pp *PostController) List(c context.Context, ctx *app.RequestContext) {
+	// 从请求获取参数
+	pageNum, err := strconv.Atoi(ctx.Query("page"))
+	if err != nil {
+		pageNum = 1
+	}
+	pageSize, err := strconv.Atoi(ctx.Query("size"))
+	if err != nil {
+		pageSize = 5
+	}
 	// 调用service层处理业务逻辑
-	postList, err := service.GetPostList()
+	postList, err := service.GetPostList(pageNum, pageSize)
 	if err != nil {
 		hlog.Error("Get post list with service error: ", err)
 		response.Error(ctx, response.CodeServerBusy, "")

@@ -209,3 +209,24 @@
 {"level":"debug","ts":1695646808.096299,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/post/             --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
 {"level":"info","ts":1695646808.0964422,"msg":"HERTZ: Using network library=netpoll"}
 {"level":"info","ts":1695646808.096546,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}
+{"level":"debug","ts":1695653686.8295848,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/signup            --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695653686.830466,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/login             --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695653686.830509,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/info              --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695653686.836329,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/        --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695653686.8363829,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/:id     --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695653686.841867,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/post/             --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Create-fm (num=3 handlers)"}
+{"level":"debug","ts":1695653686.841928,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/post/:id          --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695653686.8419461,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/post/             --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
+{"level":"info","ts":1695653686.842109,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695653686.8423061,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}
+{"level":"error","ts":1695653870.727516,"msg":"Get post list with service error: 没有找到相关帖子"}
+{"level":"debug","ts":1695653960.6104782,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/signup            --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695653960.6105568,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/login             --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695653960.610568,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/info              --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695653960.615943,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/        --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695653960.615958,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/:id     --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695653960.6207201,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/post/             --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Create-fm (num=3 handlers)"}
+{"level":"debug","ts":1695653960.620737,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/post/:id          --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695653960.620744,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/post/             --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
+{"level":"info","ts":1695653960.6208892,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695653960.620956,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}
