@@ -28,6 +28,6 @@ func GetPost(postID int64) (post *models.Post, err error) {
 	return mysql.GetPost(postID)
 }
 
-func GetPostList(pageNum, pageSize int) (postList []models.Post, err error) {
+func GetPostList(pageNum, pageSize int) (postList []*models.Post, err error) {
 	return mysql.GetPostList(pageNum, pageSize)
 }

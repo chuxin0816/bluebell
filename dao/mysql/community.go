@@ -19,7 +19,7 @@ func NewCommunity() error {
 	return nil
 }
 
-func GetCommunityList() (communities []models.Community, err error) {
+func GetCommunityList() (communities []*models.Community, err error) {
 	db.Find(&communities)
 	if len(communities) == 0 {
 		return nil, ErrorCommunityNotFound

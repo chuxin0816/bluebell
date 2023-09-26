@@ -28,7 +28,7 @@ func GetPost(postID int64) (post *models.Post, err error) {
 	return post, nil
 }
 
-func GetPostList(pageNum, pageSize int) (postList []models.Post, err error) {
+func GetPostList(pageNum, pageSize int) (postList []*models.Post, err error) {
 	db.Offset((pageNum - 1) * pageSize).Limit(pageSize).Find(&postList)
 	if len(postList) == 0 {
 		return nil, ErrorPostNotFound

@@ -23,9 +23,9 @@ func ToCommunityDto(community *models.Community) *CommunityDto {
 	}
 }
 
-func ToCommunityDtoList(CommunityList []models.Community) (communityDtoList []CommunityDto) {
+func ToCommunityDtoList(CommunityList []*models.Community) (communityDtoList []*CommunityDto) {
 	for _, community := range CommunityList {
-		communityDtoList = append(communityDtoList, *ToCommunityDto(&community))
+		communityDtoList = append(communityDtoList, ToCommunityDto(community))
 	}
 	return communityDtoList
 }
