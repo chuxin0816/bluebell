@@ -29,15 +29,15 @@ func SetUp(conf *config.HertzConfig) *server.Hertz {
 		communityRouter.GET("/:id", communityController.Show)
 	}
 
-	postRouter := v1.Group("/post", middleware.AuthMiddleware())
+	postRouter := v1.Group("/", middleware.AuthMiddleware())
 	{
 		postController, err := controller.NewPostController()
 		if err != nil {
 			hlog.Error("NewPostController with err: ", err)
 		}
-		postRouter.POST("/", postController.Create)
+		postRouter.POST("/post", postController.Create)
 		postRouter.GET("/:id", postController.Show)
-		postRouter.GET("/", postController.List)
+		postRouter.GET("/posts2", postController.List)
 	}
 
 	return h
