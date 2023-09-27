@@ -76,16 +76,19 @@ func (pc *PostController) Show(c context.Context, ctx *app.RequestContext) {
 
 func (pc *PostController) List(c context.Context, ctx *app.RequestContext) {
 	// 从请求获取参数
-	pageNum, err := strconv.Atoi(ctx.Query("page"))
-	if err != nil {
-		pageNum = 1
+	ppl := &models.ParamPostList{
+		Page:  1,
+		Size:  5,
+		Order: models.OrderTime,
 	}
-	pageSize, err := strconv.Atoi(ctx.Query("size"))
+	err := ctx.BindAndValidate(ppl)
 	if err != nil {
-		pageSize = 5
+		hlog.Error("Get post list with invalid param: ", err)
+		response.Error(ctx, response.CodeInvalidParam, "")
+		return
 	}
 	// 调用service层处理业务逻辑
-	postList, err := service.GetPostList(pageNum, pageSize)
+	postList, err := service.GetPostList(ppl)
 	if err != nil {
 		hlog.Error("Get post list with service error: ", err)
 		response.Error(ctx, response.CodeServerBusy, "")

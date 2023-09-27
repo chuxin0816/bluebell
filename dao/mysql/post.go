@@ -2,6 +2,7 @@ package mysql
 
 import (
 	"errors"
+	"strings"
 
 	"github.com/chuxin0816/bluebell/models"
 )
@@ -28,8 +29,8 @@ func GetPost(postID int64) (post *models.Post, err error) {
 	return post, nil
 }
 
-func GetPostList(pageNum, pageSize int) (postList []*models.Post, err error) {
-	db.Offset((pageNum - 1) * pageSize).Limit(pageSize).Find(&postList)
+func GetPostListByIDs(ids []string) (postList []*models.Post, err error) {
+	db.Where("post_id IN (?)", ids).Order("FIELD(post_id," + strings.Join(ids, ",") + ")").Find(&postList)
 	if len(postList) == 0 {
 		return nil, ErrorPostNotFound
 	}

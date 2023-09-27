@@ -35,8 +35,18 @@ func GetPost(postID int64) (post *models.Post, err error) {
 	return mysql.GetPost(postID)
 }
 
-func GetPostList(pageNum, pageSize int) (postList []*models.Post, err error) {
-	return mysql.GetPostList(pageNum, pageSize)
+func GetPostList(ppl *models.ParamPostList) (postList []*models.Post, err error) {
+	// 从redis中获取postID列表
+	ids, err := redis.GetPostIDsInOrder(ppl)
+	if err != nil {
+		return nil, err
+	}
+	// 根据postID列表从mysql中获取post列表
+	postList, err = mysql.GetPostListByIDs(ids)
+	if err != nil {
+		return nil, err
+	}
+	return
 }
 
 func VotePost(userID int64, pv *models.ParamVoteData) error {

@@ -4,6 +4,7 @@ import (
 	"context"
 	"time"
 
+	"github.com/chuxin0816/bluebell/models"
 	"github.com/redis/go-redis/v9"
 )
 
@@ -22,4 +23,16 @@ func CreatePost(postID string) error {
 	})
 	_, err := pipeline.Exec(context.Background())
 	return err
+}
+
+func GetPostIDsInOrder(ppl *models.ParamPostList) ([]string, error) {
+	// 从redis中获取postID列表
+	key := getRedisKey(KeyPostTimeZSet)
+	if ppl.Order == models.OrderScore {
+		key = getRedisKey(KeyPostScoreZSet)
+	}
+	start := (ppl.Page - 1) * ppl.Size
+	stop := start + ppl.Size - 1
+	// 按分数从大到小查询
+	return rdb.ZRevRange(context.Background(), key, start, stop).Result()
 }
