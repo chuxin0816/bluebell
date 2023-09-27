@@ -42,6 +42,7 @@ func ToPostDto(post *models.Post) (*PostDto, error) {
 }
 
 func ToPostDtoList(postList []*models.Post) (postDtoList []*PostDto, err error) {
+	postDtoList = make([]*PostDto, 0, len(postList))
 	for _, post := range postList {
 		postDto, err := ToPostDto(post)
 		if err != nil {
