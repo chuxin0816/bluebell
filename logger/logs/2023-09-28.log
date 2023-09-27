@@ -1,0 +1,11 @@
+{"level":"debug","ts":1695834246.020103,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/signup            --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695834246.0203588,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/login             --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695834246.020385,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/info              --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695834246.0263581,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/        --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695834246.02641,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/:id     --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695834246.05882,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/post              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Create-fm (num=3 handlers)"}
+{"level":"debug","ts":1695834246.0588548,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/:id               --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695834246.058866,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/posts2            --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695834246.0588748,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/vote              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Vote-fm (num=3 handlers)"}
+{"level":"info","ts":1695834246.05899,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695834246.059108,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}

@@ -36,3 +36,22 @@ func GetPostIDsInOrder(ppl *models.ParamPostList) ([]string, error) {
 	// 按分数从大到小查询
 	return rdb.ZRevRange(context.Background(), key, start, stop).Result()
 }
+
+func GetPostVoteData(ids []string) (voteData []int64, err error) {
+	voteData = make([]int64, 0, len(ids))
+	// 提前查好每个post的投票数
+	pipeline := rdb.Pipeline()
+	for _, id := range ids {
+		key := getRedisKey(KeyPostVotedZSetPF + id)
+		pipeline.ZCount(context.Background(), key, "1", "1")
+	}
+	cmder, err := pipeline.Exec(context.Background())
+	if err != nil {
+		return nil, err
+	}
+	for _, cmd := range cmder {
+		v := cmd.(*redis.IntCmd).Val()
+		voteData = append(voteData, v)
+	}
+	return
+}

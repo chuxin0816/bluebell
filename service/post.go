@@ -41,10 +41,15 @@ func GetPostList(ppl *models.ParamPostList) (postList []*models.Post, err error)
 	if err != nil {
 		return nil, err
 	}
+	// 提前查好每个post的投票数
+	voteData, err := redis.GetPostVoteData(ids)
 	// 根据postID列表从mysql中获取post列表
 	postList, err = mysql.GetPostListByIDs(ids)
 	if err != nil {
 		return nil, err
+	}
+	for idx, post := range postList {
+		post.VoteNum = voteData[idx]
 	}
 	return
 }

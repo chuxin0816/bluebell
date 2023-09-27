@@ -13,6 +13,7 @@ type PostDto struct {
 	Status     string        `json:"status"`
 	Community  *CommunityDto `json:"community"`
 	AuthorName string        `json:"author_name"`
+	VoteNum    string        `json:"vote_num"`
 	Title      string        `json:"title"`
 	Content    string        `json:"content"`
 	CreatedAt  time.Time
@@ -32,8 +33,9 @@ func ToPostDto(post *models.Post) (*PostDto, error) {
 	return &PostDto{
 		PostID:     strconv.FormatInt(post.PostID, 10),
 		Status:     strconv.Itoa(post.Status),
-		AuthorName: authorName,
 		Community:  ToCommunityDto(community),
+		AuthorName: authorName,
+		VoteNum:    strconv.Itoa(int(post.VoteNum)),
 		Title:      post.Title,
 		Content:    post.Content,
 		CreatedAt:  post.CreatedAt,
