@@ -19,6 +19,7 @@ type IPostController interface {
 	Create(c context.Context, ctx *app.RequestContext)
 	Show(c context.Context, ctx *app.RequestContext)
 	List(c context.Context, ctx *app.RequestContext)
+	Vote(c context.Context, ctx *app.RequestContext)
 }
 
 type PostController struct{}
@@ -38,9 +39,8 @@ func (pc *PostController) Create(c context.Context, ctx *app.RequestContext) {
 		return
 	}
 	userID := ctx.MustGet(middleware.CtxUserKey).(*models.User).UserID
-	pp.AuthorID = userID
 	// 调用service层处理业务逻辑
-	err = service.CreatePost(pp)
+	err = service.CreatePost(pp, userID)
 	if err != nil {
 		hlog.Error("Create post with service error: ", err)
 		response.Error(ctx, response.CodeServerBusy, "")
@@ -49,7 +49,7 @@ func (pc *PostController) Create(c context.Context, ctx *app.RequestContext) {
 	response.Success(ctx, nil, "创建成功")
 }
 
-func (pp *PostController) Show(c context.Context, ctx *app.RequestContext) {
+func (pc *PostController) Show(c context.Context, ctx *app.RequestContext) {
 	// 从请求获取参数
 	postID, err := strconv.ParseInt(ctx.Param("id"), 10, 64)
 	if err != nil {
@@ -74,7 +74,7 @@ func (pp *PostController) Show(c context.Context, ctx *app.RequestContext) {
 	response.Success(ctx, utils.H{"post": postDto}, "")
 }
 
-func (pp *PostController) List(c context.Context, ctx *app.RequestContext) {
+func (pc *PostController) List(c context.Context, ctx *app.RequestContext) {
 	// 从请求获取参数
 	pageNum, err := strconv.Atoi(ctx.Query("page"))
 	if err != nil {
@@ -98,4 +98,24 @@ func (pp *PostController) List(c context.Context, ctx *app.RequestContext) {
 		return
 	}
 	response.Success(ctx, utils.H{"post_list": postDtoList}, "")
+}
+
+func (pc *PostController) Vote(c context.Context, ctx *app.RequestContext) {
+	// 从请求获取参数
+	pv := new(models.ParamVoteData)
+	err := ctx.BindAndValidate(pv)
+	if err != nil {
+		hlog.Error("Vote post with invalid param: ", err)
+		response.Error(ctx, response.CodeInvalidParam, "")
+		return
+	}
+	userID := ctx.MustGet(middleware.CtxUserKey).(*models.User).UserID
+	// 调用service层处理业务逻辑
+	err = service.VotePost(userID, pv)
+	if err != nil {
+		hlog.Error("Vote post with service error: ", err)
+		response.Error(ctx, response.CodeServerBusy, "")
+		return
+	}
+	response.Success(ctx, nil, "投票成功")
 }

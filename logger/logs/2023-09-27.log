@@ -1,0 +1,127 @@
+{"level":"debug","ts":1695783170.9938319,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/signup            --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695783170.9940648,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/login             --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695783170.99409,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/info              --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695783170.999848,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/        --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783170.9998899,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/:id     --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783171.005815,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/post              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Create-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783171.005863,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/:id               --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783171.005884,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/posts2            --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783171.005899,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/vote              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Vote-fm (num=3 handlers)"}
+{"level":"info","ts":1695783171.0061,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695783171.006249,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}
+{"level":"error","ts":1695783338.379051,"msg":"Vote post with service error: 投票时间已过"}
+{"level":"debug","ts":1695783705.55761,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/signup            --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695783705.5578282,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/login             --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695783705.557853,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/info              --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695783705.5656269,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/        --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783705.565666,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/:id     --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783705.5722759,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/post              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Create-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783705.572319,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/:id               --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783705.572339,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/posts2            --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783705.572355,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/vote              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Vote-fm (num=3 handlers)"}
+{"level":"info","ts":1695783705.572551,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695783705.572714,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}
+{"level":"debug","ts":1695783790.6581151,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/signup            --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695783790.658247,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/login             --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695783790.658262,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/info              --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695783790.665386,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/        --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783790.665411,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/:id     --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783790.671338,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/post              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Create-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783790.6713548,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/:id               --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783790.671367,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/posts2            --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783790.671377,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/vote              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Vote-fm (num=3 handlers)"}
+{"level":"info","ts":1695783790.671479,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695783790.671561,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}
+{"level":"error","ts":1695783810.937412,"msg":"Create post with invalid param: json: invalid use of ,string struct tag, trying to unmarshal unquoted value into int"}
+{"level":"debug","ts":1695783862.59433,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/signup            --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695783862.5944698,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/login             --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695783862.594487,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/info              --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695783862.602049,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/        --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783862.602089,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/:id     --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783862.609349,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/post              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Create-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783862.6093812,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/:id               --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783862.609395,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/posts2            --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695783862.609405,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/vote              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Vote-fm (num=3 handlers)"}
+{"level":"info","ts":1695783862.609547,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695783862.609654,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}
+{"level":"error","ts":1695783878.620814,"msg":"Create post with invalid param: json: invalid use of ,string struct tag, trying to unmarshal unquoted value into int"}
+{"level":"error","ts":1695783902.414699,"msg":"Create post with invalid param: validating: expr_path=PostID, cause=invalid"}
+{"level":"debug","ts":1695784070.744969,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/signup            --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695784070.7451038,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/login             --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695784070.745118,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/info              --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695784070.752189,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/        --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784070.752227,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/:id     --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784070.758218,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/post              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Create-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784070.758255,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/:id               --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784070.758265,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/posts2            --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784070.7582731,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/vote              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Vote-fm (num=3 handlers)"}
+{"level":"info","ts":1695784070.758454,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695784070.7585542,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}
+{"level":"error","ts":1695784086.937676,"msg":"Vote post with service error: 投票时间已过"}
+{"level":"error","ts":1695784109.444737,"msg":"Vote post with service error: 不允许重复投票"}
+{"level":"debug","ts":1695784595.8938181,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/signup            --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695784595.893912,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/login             --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695784595.893922,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/info              --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695784595.899901,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/        --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784595.89992,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/:id     --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784595.904622,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/post              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Create-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784595.9046478,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/:id               --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784595.904667,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/posts2            --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784595.904674,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/vote              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Vote-fm (num=3 handlers)"}
+{"level":"info","ts":1695784595.904783,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695784595.904855,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}
+{"level":"debug","ts":1695784611.993676,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/signup            --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695784611.9937751,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/login             --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695784611.9937868,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/info              --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695784612.000941,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/        --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784612.00096,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/:id     --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784612.006488,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/post              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Create-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784612.0065012,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/:id               --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784612.0065129,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/posts2            --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784612.006523,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/vote              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Vote-fm (num=3 handlers)"}
+{"level":"info","ts":1695784612.006664,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695784612.006753,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}
+{"level":"debug","ts":1695784703.826401,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/signup            --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695784703.826595,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/login             --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695784703.8266199,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/info              --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695784703.8351932,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/        --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784703.835235,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/:id     --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784703.843149,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/post              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Create-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784703.843204,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/:id               --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784703.8432682,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/posts2            --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784703.843288,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/vote              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Vote-fm (num=3 handlers)"}
+{"level":"info","ts":1695784703.843452,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695784703.843631,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}
+{"level":"debug","ts":1695784803.4951968,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/signup            --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695784803.495382,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/login             --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695784803.4954,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/info              --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695784803.503816,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/        --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784803.503843,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/:id     --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784803.509904,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/post              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Create-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784803.509939,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/:id               --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784803.509957,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/posts2            --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784803.509969,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/vote              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Vote-fm (num=3 handlers)"}
+{"level":"info","ts":1695784803.51012,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695784803.510249,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}
+{"level":"debug","ts":1695784937.057088,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/signup            --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695784937.05724,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/login             --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695784937.05726,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/info              --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695784937.063178,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/        --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784937.063206,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/:id     --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784937.068556,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/post              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Create-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784937.068577,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/:id               --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784937.068604,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/posts2            --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784937.068615,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/vote              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Vote-fm (num=3 handlers)"}
+{"level":"info","ts":1695784937.068741,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695784937.068855,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}
+{"level":"debug","ts":1695784963.9966562,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/signup            --> handlerName=github.com/chuxin0816/bluebell/controller.RegisterHandler (num=2 handlers)"}
+{"level":"debug","ts":1695784963.996765,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/login             --> handlerName=github.com/chuxin0816/bluebell/controller.LoginHandler (num=2 handlers)"}
+{"level":"debug","ts":1695784963.99678,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/info              --> handlerName=github.com/chuxin0816/bluebell/controller.InfoHandler (num=3 handlers)"}
+{"level":"debug","ts":1695784964.0028841,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/        --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784964.002903,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/community/:id     --> handlerName=github.com/chuxin0816/bluebell/controller.ICommunityController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784964.007403,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/post              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Create-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784964.0074198,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/:id               --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Show-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784964.0074291,"msg":"HERTZ: Method=GET    absolutePath=/api/v1/posts2            --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.List-fm (num=3 handlers)"}
+{"level":"debug","ts":1695784964.0074382,"msg":"HERTZ: Method=POST   absolutePath=/api/v1/vote              --> handlerName=github.com/chuxin0816/bluebell/controller.IPostController.Vote-fm (num=3 handlers)"}
+{"level":"info","ts":1695784964.007504,"msg":"HERTZ: Using network library=netpoll"}
+{"level":"info","ts":1695784964.007589,"msg":"HERTZ: HTTP server listening on address=127.0.0.1:8888"}

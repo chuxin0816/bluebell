@@ -12,10 +12,13 @@ type ParamLogin struct {
 }
 
 type ParamPost struct {
-	PostID      int64  `json:"id"`
-	AuthorID    int64  `json:"author_id"`
 	CommunityID int    `json:"community_id,string" vd:"$>0"`
 	Status      int    `json:"status,string" vd:"$>0"`
 	Title       string `json:"title" vd:"len($)>0"`
 	Content     string `json:"content" vd:"len($)>0"`
+}
+
+type ParamVoteData struct {
+	PostID    int64 `json:"post_id,string" vd:"$>0"`
+	Direction int8  `json:"direction,string" vd:"$>-2&&$<2"`
 }
