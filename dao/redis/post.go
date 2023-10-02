@@ -2,13 +2,21 @@ package redis
 
 import (
 	"context"
+	"strconv"
 	"time"
 
 	"github.com/chuxin0816/bluebell/models"
 	"github.com/redis/go-redis/v9"
 )
 
-func CreatePost(postID string) error {
+func getIDs(key string, page, size int64) ([]string, error) {
+	start := page * size
+	stop := start + size - 1
+	// 按分数从大到小查询
+	return rdb.ZRevRange(context.Background(), key, start, stop).Result()
+}
+
+func CreatePost(postID, communityID string) error {
 	// 开启事务
 	pipeline := rdb.TxPipeline()
 	// 帖子发帖时间
@@ -21,6 +29,8 @@ func CreatePost(postID string) error {
 		Score:  float64(time.Now().Unix()),
 		Member: postID,
 	})
+	cKey := getRedisKey(KeyCommunitySetPF + communityID)
+	pipeline.SAdd(context.Background(), cKey, postID)
 	_, err := pipeline.Exec(context.Background())
 	return err
 }
@@ -31,10 +41,7 @@ func GetPostIDsInOrder(ppl *models.ParamPostList) ([]string, error) {
 	if ppl.Order == models.OrderScore {
 		key = getRedisKey(KeyPostScoreZSet)
 	}
-	start := (ppl.Page - 1) * ppl.Size
-	stop := start + ppl.Size - 1
-	// 按分数从大到小查询
-	return rdb.ZRevRange(context.Background(), key, start, stop).Result()
+	return getIDs(key, ppl.Page, ppl.Size)
 }
 
 func GetPostVoteData(ids []string) (voteData []int64, err error) {
@@ -54,4 +61,28 @@ func GetPostVoteData(ids []string) (voteData []int64, err error) {
 		voteData = append(voteData, v)
 	}
 	return
+}
+
+func GetCommunityPostIDsInOrder(ppl *models.ParamCommunityPostList) ([]string, error) {
+	orderKey := getRedisKey(KeyPostTimeZSet)
+	if ppl.Order == models.OrderScore {
+		orderKey = getRedisKey(KeyPostScoreZSet)
+	}
+	cKey := getRedisKey(KeyCommunitySetPF + strconv.Itoa(ppl.CommunityID))
+	key := orderKey + strconv.Itoa(ppl.CommunityID)
+	// 利用缓存减少ZInterStore次数
+	if rdb.Exists(context.Background(), key).Val() < 1 {
+		// 不存在，需计算
+		pipeline := rdb.Pipeline()
+		pipeline.ZInterStore(context.Background(), key, &redis.ZStore{
+			Keys:      []string{cKey, orderKey},
+			Aggregate: "MAX",
+		})
+		pipeline.Expire(context.Background(), key, time.Second*60)
+		_, err := pipeline.Exec(context.Background())
+		if err != nil {
+			return nil, err
+		}
+	}
+	return getIDs(key, ppl.Page, ppl.Size)
 }

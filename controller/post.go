@@ -20,6 +20,7 @@ type IPostController interface {
 	Show(c context.Context, ctx *app.RequestContext)
 	List(c context.Context, ctx *app.RequestContext)
 	Vote(c context.Context, ctx *app.RequestContext)
+	CommunityList(c context.Context, ctx *app.RequestContext)
 }
 
 type PostController struct{}
@@ -121,4 +122,33 @@ func (pc *PostController) Vote(c context.Context, ctx *app.RequestContext) {
 		return
 	}
 	response.Success(ctx, nil, "投票成功")
+}
+
+func (pc *PostController) CommunityList(c context.Context, ctx *app.RequestContext) {
+	// 从请求获取参数
+	pcl := &models.ParamCommunityPostList{
+		Page:  1,
+		Size:  5,
+		Order: "time",
+	}
+	err := ctx.BindAndValidate(pcl)
+	if err != nil {
+		hlog.Error("Get community post list with invalid param: ", err)
+		response.Error(ctx, response.CodeInvalidParam, "")
+		return
+	}
+	// 调用service层处理业务逻辑
+	CommunityPostList, err := service.GetCommunityPostList(pcl)
+	if err != nil {
+		hlog.Error("Get community post list with service error: ", err)
+		response.Error(ctx, response.CodeServerBusy, "")
+		return
+	}
+	postDtoList, err := dto.ToPostDtoList(CommunityPostList)
+	if err != nil {
+		hlog.Error("Get community post list with dto error: ", err)
+		response.Error(ctx, response.CodeServerBusy, "")
+		return
+	}
+	response.Success(ctx, utils.H{"post_list": postDtoList}, "")
 }

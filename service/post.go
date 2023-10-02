@@ -28,7 +28,7 @@ func CreatePost(pp *models.ParamPost, userID int64) (err error) {
 	if err != nil {
 		return err
 	}
-	return redis.CreatePost(strconv.FormatInt(postID, 10))
+	return redis.CreatePost(strconv.FormatInt(postID, 10), strconv.Itoa(p.CommunityID))
 }
 
 func GetPost(postID int64) (post *models.Post, err error) {
@@ -56,4 +56,23 @@ func GetPostList(ppl *models.ParamPostList) (postList []*models.Post, err error)
 
 func VotePost(userID int64, pv *models.ParamVoteData) error {
 	return redis.VotePost(strconv.FormatInt(userID, 10), strconv.FormatInt(pv.PostID, 10), float64(pv.Direction))
+}
+
+func GetCommunityPostList(pcl *models.ParamCommunityPostList) (postList []*models.Post, err error) {
+	// 从redis中获取postID列表
+	ids, err := redis.GetCommunityPostIDsInOrder(pcl)
+	if err != nil {
+		return nil, err
+	}
+	// 提前查好每个post的投票数
+	voteData, err := redis.GetPostVoteData(ids)
+	// 根据postID列表从mysql中获取post列表
+	postList, err = mysql.GetPostListByIDs(ids)
+	if err != nil {
+		return nil, err
+	}
+	for idx, post := range postList {
+		post.VoteNum = voteData[idx]
+	}
+	return
 }
