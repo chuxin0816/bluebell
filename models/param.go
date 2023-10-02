@@ -24,19 +24,13 @@ type ParamPost struct {
 }
 
 type ParamPostList struct {
-	Page  int64  `query:"page"`
-	Size  int64  `query:"size"`
-	Order string `query:"order"`
+	Page        int64  `query:"page"`
+	Size        int64  `query:"size"`
+	Order       string `query:"order"`
+	CommunityID int    `query:"community_id"`
 }
 
 type ParamVoteData struct {
 	PostID    int64 `json:"post_id,string" vd:"$>0"`
 	Direction int8  `json:"direction,string" vd:"$>-2&&$<2"`
-}
-
-type ParamCommunityPostList struct {
-	Page        int64  `query:"page"`
-	Size        int64  `query:"size"`
-	Order       string `query:"order"`
-	CommunityID int    `query:"community_id"`
 }

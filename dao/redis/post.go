@@ -10,7 +10,7 @@ import (
 )
 
 func getIDs(key string, page, size int64) ([]string, error) {
-	start := page * size
+	start := (page - 1) * size
 	stop := start + size - 1
 	// 按分数从大到小查询
 	return rdb.ZRevRange(context.Background(), key, start, stop).Result()
@@ -63,13 +63,15 @@ func GetPostVoteData(ids []string) (voteData []int64, err error) {
 	return
 }
 
-func GetCommunityPostIDsInOrder(ppl *models.ParamCommunityPostList) ([]string, error) {
+func GetCommunityPostIDsInOrder(ppl *models.ParamPostList) ([]string, error) {
+
 	orderKey := getRedisKey(KeyPostTimeZSet)
 	if ppl.Order == models.OrderScore {
 		orderKey = getRedisKey(KeyPostScoreZSet)
 	}
+
 	cKey := getRedisKey(KeyCommunitySetPF + strconv.Itoa(ppl.CommunityID))
-	key := orderKey + strconv.Itoa(ppl.CommunityID)
+	key := orderKey + ":" + strconv.Itoa(ppl.CommunityID)
 	// 利用缓存减少ZInterStore次数
 	if rdb.Exists(context.Background(), key).Val() < 1 {
 		// 不存在，需计算
