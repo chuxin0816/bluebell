@@ -24,10 +24,10 @@ type ParamPost struct {
 }
 
 type ParamPostList struct {
-	Page        int64  `query:"page"`
-	Size        int64  `query:"size"`
-	Order       string `query:"order"`
-	CommunityID int    `query:"community_id"`
+	Page        int64  `query:"page" json:"page"`
+	Size        int64  `query:"size" json:"size"`
+	Order       string `query:"order" json:"order"`
+	CommunityID int    `query:"community_id" json:"community_id"`
 }
 
 type ParamVoteData struct {

@@ -1,5 +1,13 @@
 package main
 
+// @title bluebell API
+// @version 1.0
+// @description bluebell API文档
+// @license.name Apache 2.0
+// @contact.name chuxin
+// @contact.url github.com/chuxin0816
+// @host 127.0.0.1:8888
+// @BasePath /api/v1
 import (
 	"fmt"
 

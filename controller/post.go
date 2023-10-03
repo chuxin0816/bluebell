@@ -74,6 +74,17 @@ func (pc *PostController) Show(c context.Context, ctx *app.RequestContext) {
 	response.Success(ctx, utils.H{"post": postDto}, "")
 }
 
+// List 升级版帖子列表接口
+// @Summary 升级版帖子列表接口
+// @Description 可按社区按时间或分数排序查询帖子列表接口
+// @Tags 帖子相关接口(api分组展示使用的)
+// @Accept application/json
+// @Produce application/json
+// @Param Authorization header string false "Bearer JWT"
+// @Param object query models.ParamPostList false "查询参数"
+// @Security ApiKeyAuth
+// @Success 200 {object} []dto.PostDto
+// @Router /posts2 [get]
 func (pc *PostController) List(c context.Context, ctx *app.RequestContext) {
 	// 从请求获取参数
 	ppl := &models.ParamPostList{
