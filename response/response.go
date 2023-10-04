@@ -6,11 +6,17 @@ import (
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 )
 
+type ResponseData struct {
+	Code ResCode `json:"code"`
+	Msg  any     `json:"msg"`
+	Data any     `json:"data,omitempty"`
+}
+
 func Response(ctx *app.RequestContext, httpStatus int, code ResCode, data utils.H, msg string) {
-	ctx.JSON(httpStatus, utils.H{
-		"code":    code,
-		"message": msg,
-		"data":    data,
+	ctx.JSON(httpStatus, &ResponseData{
+		Code: code,
+		Msg:  msg,
+		Data: data,
 	})
 }
 

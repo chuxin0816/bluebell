@@ -16,8 +16,7 @@ type PostDto struct {
 	VoteNum    string        `json:"vote_num"`
 	Title      string        `json:"title"`
 	Content    string        `json:"content"`
-	CreatedAt  time.Time
-	UpdatedAt  time.Time
+	CreatedAt  time.Time     `json:"created_time"`
 }
 
 func ToPostDto(post *models.Post) (*PostDto, error) {
@@ -39,7 +38,6 @@ func ToPostDto(post *models.Post) (*PostDto, error) {
 		Title:      post.Title,
 		Content:    post.Content,
 		CreatedAt:  post.CreatedAt,
-		UpdatedAt:  post.UpdatedAt,
 	}, nil
 }
 

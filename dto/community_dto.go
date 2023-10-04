@@ -8,10 +8,10 @@ import (
 )
 
 type CommunityDto struct {
-	CommunityID   string `json:"community_id"`
-	CommunityName string `json:"community_name"`
-	Introduction  string `json:"introduction"`
-	CreatedAt     time.Time
+	CommunityID   string    `json:"community_id"`
+	CommunityName string    `json:"community_name"`
+	Introduction  string    `json:"introduction"`
+	CreatedAt     time.Time `json:"created_time"`
 }
 
 func ToCommunityDto(community *models.Community) *CommunityDto {
