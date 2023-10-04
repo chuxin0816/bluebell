@@ -9,7 +9,7 @@ import (
 
 var jwtKey = []byte("超级无敌霸王密钥")
 
-const tokenDuration = time.Minute * 30
+const tokenDuration = time.Minute * 100
 
 type Claims struct {
 	UserID int64 `json:"user_id"`

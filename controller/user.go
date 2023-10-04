@@ -6,7 +6,6 @@ import (
 	"fmt"
 
 	"github.com/chuxin0816/bluebell/dao/mysql"
-	"github.com/chuxin0816/bluebell/dto"
 	"github.com/chuxin0816/bluebell/models"
 	"github.com/chuxin0816/bluebell/response"
 	"github.com/chuxin0816/bluebell/service"
@@ -54,9 +53,4 @@ func LoginHandler(c context.Context, ctx *app.RequestContext) {
 		return
 	}
 	response.Success(ctx, utils.H{"token": token}, "登陆成功")
-}
-
-func InfoHandler(c context.Context, ctx *app.RequestContext) {
-	user := ctx.MustGet("user").(*models.User)
-	response.Success(ctx, utils.H{"user": dto.ToUserDto(user)}, "")
 }
