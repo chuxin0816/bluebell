@@ -21,7 +21,6 @@ func SetUp(conf *config.HertzConfig) *server.Hertz {
 	v1 := h.Group("/api/v1")
 	v1.POST("/signup", controller.RegisterHandler)
 	v1.POST("/login", controller.LoginHandler)
-	v1.GET("/info", middleware.AuthMiddleware(), controller.InfoHandler)
 
 	communityRouter := v1.Group("/community")
 	{
