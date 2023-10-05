@@ -32,8 +32,7 @@ func (cc *CommunityController) List(c context.Context, ctx *app.RequestContext) 
 		response.Error(ctx, response.CodeServerBusy, "")
 		return
 	}
-	total := len(communityList)
-	response.Success(ctx, utils.H{"community_list": dto.ToCommunityDtoList(communityList), "total": total}, "")
+	response.Success(ctx, dto.ToCommunityDtoList(communityList), "")
 }
 
 func (cc *CommunityController) Show(c context.Context, ctx *app.RequestContext) {

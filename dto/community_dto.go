@@ -8,8 +8,8 @@ import (
 )
 
 type CommunityDto struct {
-	CommunityID   string    `json:"community_id"`
-	CommunityName string    `json:"community_name"`
+	CommunityID   string    `json:"id"`
+	CommunityName string    `json:"name"`
 	Introduction  string    `json:"introduction"`
 	CreatedAt     time.Time `json:"created_time"`
 }

@@ -2,7 +2,6 @@ package response
 
 import (
 	"github.com/cloudwego/hertz/pkg/app"
-	"github.com/cloudwego/hertz/pkg/common/utils"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 )
 
@@ -12,7 +11,7 @@ type ResponseData struct {
 	Data any     `json:"data,omitempty"`
 }
 
-func Response(ctx *app.RequestContext, httpStatus int, code ResCode, data utils.H, msg string) {
+func Response(ctx *app.RequestContext, httpStatus int, code ResCode, data any, msg string) {
 	ctx.JSON(httpStatus, &ResponseData{
 		Code: code,
 		Msg:  msg,
@@ -20,7 +19,7 @@ func Response(ctx *app.RequestContext, httpStatus int, code ResCode, data utils.
 	})
 }
 
-func Success(ctx *app.RequestContext, data utils.H, msg string) {
+func Success(ctx *app.RequestContext, data any, msg string) {
 	if msg == "" {
 		msg = CodeSuccess.Message()
 	}
