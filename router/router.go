@@ -5,19 +5,22 @@ import (
 
 	"github.com/chuxin0816/bluebell/config"
 	"github.com/chuxin0816/bluebell/controller"
-	_ "github.com/chuxin0816/bluebell/docs"
+
+	// _ "github.com/chuxin0816/bluebell/docs"
 	"github.com/chuxin0816/bluebell/middleware"
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
-	"github.com/hertz-contrib/swagger"
-	swaggerFiles "github.com/swaggo/files"
+	"github.com/hertz-contrib/pprof"
+	// "github.com/hertz-contrib/swagger"
+	// swaggerFiles "github.com/swaggo/files"
 )
 
 func SetUp(conf *config.HertzConfig) *server.Hertz {
 	h := server.Default(server.WithHostPorts(
 		fmt.Sprintf("%s:%d", conf.Host, conf.Port),
 	))
-	h.GET("/swagger/*any", swagger.WrapHandler(swaggerFiles.Handler))
+	pprof.Register(h)
+	// h.GET("/swagger/*any", swagger.WrapHandler(swaggerFiles.Handler))
 	v1 := h.Group("/api/v1")
 	v1.POST("/signup", controller.RegisterHandler)
 	v1.POST("/login", controller.LoginHandler)

@@ -12,7 +12,6 @@ import (
 	"github.com/chuxin0816/bluebell/service"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
-	"github.com/cloudwego/hertz/pkg/common/utils"
 )
 
 type IPostController interface {
@@ -71,7 +70,7 @@ func (pc *PostController) Show(c context.Context, ctx *app.RequestContext) {
 		response.Error(ctx, response.CodeServerBusy, "")
 		return
 	}
-	response.Success(ctx, utils.H{"post": postDto}, "")
+	response.Success(ctx, postDto, "")
 }
 
 // List 升级版帖子列表接口
@@ -112,7 +111,7 @@ func (pc *PostController) List(c context.Context, ctx *app.RequestContext) {
 		response.Error(ctx, response.CodeServerBusy, "")
 		return
 	}
-	response.Success(ctx, utils.H{"post_list": postDtoList}, "")
+	response.Success(ctx, postDtoList, "")
 }
 
 func (pc *PostController) Vote(c context.Context, ctx *app.RequestContext) {

@@ -10,7 +10,6 @@ import (
 	"github.com/chuxin0816/bluebell/service"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
-	"github.com/cloudwego/hertz/pkg/common/utils"
 )
 
 type ICommunityController interface {
@@ -50,5 +49,5 @@ func (cc *CommunityController) Show(c context.Context, ctx *app.RequestContext) 
 		response.Error(ctx, response.CodeServerBusy, "")
 		return
 	}
-	response.Success(ctx, utils.H{"community": dto.ToCommunityDto(community)}, "")
+	response.Success(ctx, dto.ToCommunityDto(community), "")
 }
