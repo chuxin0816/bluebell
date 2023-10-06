@@ -15,11 +15,23 @@ COPY . .
 
 RUN go build -o bluebell
 
-FROM scratch
+FROM ubuntu:jammy
 
+# ENV DEBIAN_FRONTEND=noninteractive \
+# DEBIAN_MIRROR=http://mirrors.163.com/debian/
+
+COPY ./wait-for.sh /
 COPY ./template /template
 COPY ./static /static
 COPY ./config/config.json /config/config.json
+
 COPY --from=builder /build/bluebell /
 
-ENTRYPOINT [ "/bluebell" ]
+RUN set -eux; \
+    apt-get update; \
+    apt-get install -y \
+    --no-install-recommends \
+    netcat; \
+    chmod 755 wait-for.sh
+
+# ENTRYPOINT [ "/bluebell" ]

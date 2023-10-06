@@ -1,0 +1,35 @@
+version: '3.7'
+services:
+  mysql:
+    image: mysql
+    ports:
+      - "13306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: '123456'
+      MYSQL_DATABASE: bluebell
+      # networks:
+      # - mynetwork
+    container_name: bluebellMysql # 指定容器名称
+
+  redis:
+    image: redis
+    ports:
+      - "16379:6379"
+      # networks:
+      # - mynetwork
+    container_name: bluebellRedis # 指定容器名称
+
+  bluebell:
+    build: .
+    command: sh -c "./wait-for.sh bluebellMysql:3306 bluebellRedis:6379 -- ./bluebell"
+    depends_on:
+      - mysql
+      - redis
+    ports:
+      - "8888:8888"
+      # networks:
+      # - mynetwork
+
+      # networks:
+      # mynetwork:
+      # driver: bridge
