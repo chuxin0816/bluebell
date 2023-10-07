@@ -9,6 +9,7 @@ require (
 	github.com/fsnotify/fsnotify v1.6.0
 	github.com/hertz-contrib/logger/zap v1.0.0
 	github.com/hertz-contrib/pprof v0.1.1
+	github.com/juju/ratelimit v1.0.2
 	github.com/redis/go-redis/v9 v9.2.0
 	github.com/spf13/viper v1.16.0
 	github.com/swaggo/swag v1.16.2
