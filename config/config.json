@@ -17,12 +17,12 @@
   "mysql": {
     "user": "root",
     "password": "123456",
-    "host": "bluebellMysql",
+    "host": "Mysql-bluebell",
     "port": 3306,
     "dbname": "bluebell"
   },
   "redis": {
-    "host": "bluebellRedis",
+    "host": "Redis-bluebell",
     "port": 6379,
     "password": "",
     "db": 0

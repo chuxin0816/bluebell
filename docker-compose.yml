@@ -7,34 +7,25 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: '123456'
       MYSQL_DATABASE: bluebell
-      # networks:
-      # - mynetwork
-    container_name: bluebellMysql # 指定容器名称
+    container_name: Mysql-bluebell
 
   redis:
     image: redis
     ports:
       - "16379:6379"
-      # networks:
-      # - mynetwork
-    container_name: bluebellRedis # 指定容器名称
+    container_name: Redis-bluebell
 
   bluebell:
     build:
       context: .
       dockerfile: dockerfile
-    command: sh -c "./wait-for.sh bluebellMysql:3306 bluebellRedis:6379 -- ./bluebell"
+    command: sh -c "./wait-for.sh Mysql-bluebell:3306 Redis-bluebell:6379 -- ./bluebell"
     depends_on:
       - mysql
       - redis
     ports:
       - "8888:8888"
-      # networks:
-      # - mynetwork
-
-      # networks:
-      # mynetwork:
-      # driver: bridge
+    container_name: App-bluebell
 
   nginx:
     build:
@@ -44,3 +35,4 @@ services:
       - "80:80"
     depends_on:
       - bluebell
+    container_name: Nginx-bluebell

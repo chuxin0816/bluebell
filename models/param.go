@@ -18,7 +18,7 @@ type ParamLogin struct {
 
 type ParamPost struct {
 	CommunityID int    `json:"community_id,string" vd:"$>0"`
-	Status      int    `json:"status,string" vd:"$>0"`
+	Status      int    `json:"status,string"`
 	Title       string `json:"title" vd:"len($)>0"`
 	Content     string `json:"content" vd:"len($)>0"`
 }
