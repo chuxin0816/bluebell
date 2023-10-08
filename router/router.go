@@ -15,7 +15,6 @@ import (
 	"github.com/cloudwego/hertz/pkg/common/hlog"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
 	"github.com/hertz-contrib/cors"
-	"github.com/hertz-contrib/pprof"
 	// "github.com/hertz-contrib/swagger"
 	// swaggerFiles "github.com/swaggo/files"
 )
@@ -33,7 +32,7 @@ func SetUp(conf *config.HertzConfig) *server.Hertz {
 	// ctx.HTML(consts.StatusOK, "index.html", nil)
 	// })
 
-	pprof.Register(h)
+	// pprof.Register(h)
 	// h.GET("/swagger/*any", swagger.WrapHandler(swaggerFiles.Handler))
 
 	h.Use(middleware.RatelimitMiddleware(time.Millisecond, 1000))
