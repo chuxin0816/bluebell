@@ -7,7 +7,6 @@ require (
 	github.com/cloudwego/hertz v0.6.8
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/fsnotify/fsnotify v1.6.0
-	github.com/hertz-contrib/cors v0.0.0-20230423034624-2bc83a8400f0
 	github.com/hertz-contrib/logger/zap v1.0.0
 	github.com/juju/ratelimit v1.0.2
 	github.com/redis/go-redis/v9 v9.2.0

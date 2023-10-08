@@ -14,7 +14,6 @@ import (
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
-	"github.com/hertz-contrib/cors"
 	// "github.com/hertz-contrib/swagger"
 	// swaggerFiles "github.com/swaggo/files"
 )
@@ -23,8 +22,6 @@ func SetUp(conf *config.HertzConfig) *server.Hertz {
 	h := server.Default(server.WithHostPorts(
 		fmt.Sprintf("%s:%d", conf.Host, conf.Port),
 	))
-
-	h.Use(cors.Default())
 
 	// h.LoadHTMLFiles("./template/index.html")
 	// h.Static("/static", ".")
