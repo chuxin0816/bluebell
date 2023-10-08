@@ -21,8 +21,6 @@ FROM ubuntu:jammy
 # DEBIAN_MIRROR=http://mirrors.163.com/debian/
 
 COPY ./wait-for.sh /
-COPY ./template /template
-COPY ./static /static
 COPY ./config/config.json /config/config.json
 
 COPY --from=builder /build/bluebell /

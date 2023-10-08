@@ -14,6 +14,7 @@ import (
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
+	"github.com/hertz-contrib/cors"
 	"github.com/hertz-contrib/pprof"
 	// "github.com/hertz-contrib/swagger"
 	// swaggerFiles "github.com/swaggo/files"
@@ -23,18 +24,25 @@ func SetUp(conf *config.HertzConfig) *server.Hertz {
 	h := server.Default(server.WithHostPorts(
 		fmt.Sprintf("%s:%d", conf.Host, conf.Port),
 	))
-	h.LoadHTMLFiles("./template/index.html")
-	h.Static("/static", ".")
-	h.GET("/", func(c context.Context, ctx *app.RequestContext) {
-		ctx.HTML(consts.StatusOK, "index.html", nil)
-	})
+
+	h.Use(cors.Default())
+
+	// h.LoadHTMLFiles("./template/index.html")
+	// h.Static("/static", ".")
+	// h.GET("/", func(c context.Context, ctx *app.RequestContext) {
+	// ctx.HTML(consts.StatusOK, "index.html", nil)
+	// })
+
 	pprof.Register(h)
 	// h.GET("/swagger/*any", swagger.WrapHandler(swaggerFiles.Handler))
+
 	h.Use(middleware.RatelimitMiddleware(time.Millisecond, 1000))
-	h.GET("/ping", func(c context.Context, ctx *app.RequestContext) {
+
+	v1 := h.Group("/api/v1")
+
+	v1.GET("/ping", func(c context.Context, ctx *app.RequestContext) {
 		ctx.String(consts.StatusOK, "pong")
 	})
-	v1 := h.Group("/api/v1")
 	v1.POST("/signup", controller.RegisterHandler)
 	v1.POST("/login", controller.LoginHandler)
 

@@ -20,7 +20,9 @@ services:
     container_name: bluebellRedis # 指定容器名称
 
   bluebell:
-    build: .
+    build:
+      context: .
+      dockerfile: dockerfile
     command: sh -c "./wait-for.sh bluebellMysql:3306 bluebellRedis:6379 -- ./bluebell"
     depends_on:
       - mysql
@@ -33,3 +35,12 @@ services:
       # networks:
       # mynetwork:
       # driver: bridge
+
+  nginx:
+    build:
+      context: .
+      dockerfile: dockerfile-nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - bluebell
