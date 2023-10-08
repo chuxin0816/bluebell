@@ -1,6 +1,6 @@
 module github.com/chuxin0816/bluebell
 
-go 1.21.1
+go 1.21
 
 require (
 	github.com/bwmarrin/snowflake v0.3.0
