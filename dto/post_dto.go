@@ -9,7 +9,7 @@ import (
 )
 
 type PostDto struct {
-	PostID     string        `json:"post_id"`
+	PostID     string        `json:"id"`
 	Status     string        `json:"status"`
 	Community  *CommunityDto `json:"community"`
 	AuthorName string        `json:"author_name"`
