@@ -7,15 +7,11 @@ import (
 
 	"github.com/chuxin0816/bluebell/config"
 	"github.com/chuxin0816/bluebell/controller"
-
-	// _ "github.com/chuxin0816/bluebell/docs"
 	"github.com/chuxin0816/bluebell/middleware"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/cloudwego/hertz/pkg/common/hlog"
 	"github.com/cloudwego/hertz/pkg/protocol/consts"
-	// "github.com/hertz-contrib/swagger"
-	// swaggerFiles "github.com/swaggo/files"
 )
 
 func SetUp(conf *config.HertzConfig) *server.Hertz {
@@ -28,9 +24,6 @@ func SetUp(conf *config.HertzConfig) *server.Hertz {
 	// h.GET("/", func(c context.Context, ctx *app.RequestContext) {
 	// ctx.HTML(consts.StatusOK, "index.html", nil)
 	// })
-
-	// pprof.Register(h)
-	// h.GET("/swagger/*any", swagger.WrapHandler(swaggerFiles.Handler))
 
 	h.Use(middleware.RatelimitMiddleware(time.Millisecond, 1000))
 
