@@ -41,7 +41,7 @@ func LoginHandler(c context.Context, ctx *app.RequestContext) {
 	p := new(models.ParamLogin)
 	if err := ctx.BindAndValidate(p); err != nil {
 		fmt.Println(p.Username, p.Password)
-		hlog.Error("SignUp with invalid param: ", err)
+		hlog.Error("Login with invalid param: ", err)
 		response.Error(ctx, response.CodeInvalidParam, "")
 		return
 	}
